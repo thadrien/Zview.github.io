@@ -1,0 +1,21 @@
+<script type="text/javascript">	
+var Upload = function() {
+	var fileUpload = document.getElementById("fileAupload");
+	var reader = new FileReader();
+	reader.onload = function (e) {
+		window.testA=e.target.result;
+		xxx=window.testA.split("\n")
+		var table = document.createElement("table");
+		for (k=0; k < xxx.length; k++){
+	        var row = table.insertRow(-1);
+	        row.innerHTML=xxx[k];
+		}
+	var dvs2pA = document.getElementById("dvs2pA");
+	dvs2pA.innerHTML = "";
+	dvs2pA.appendChild(table); 
+	}  //end of onload		
+	reader.readAsText(fileUpload.files[0]);	
+} //end of UploadA
+</script >	
+
+<input name="File" id="fileupload" onchange="Upload()" type="file">
