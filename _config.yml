@@ -1,0 +1,21 @@
+# Setup
+title:            F4INX corner
+# tagline:          'The corner of the F4INX: radiofrequency electronics, EM simulations, ...'
+description:      'The corner of the F4INX: radiofrequency electronics, EM simulations, ....'
+# url:              https://hyde.getpoole.com
+# baseurl:          ''
+# paginate:         5
+
+# About and contact
+author:
+  name:           'Mark Otto'
+  url:            https://twitter.com/mdo
+
+# Gems
+plugins:
+  # Jekyll dependencies
+  - jekyll-paginate
+  - jekyll-gist
+
+# Custom vars
+# version:          3.0.0
