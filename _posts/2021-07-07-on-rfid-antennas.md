@@ -31,4 +31,6 @@ Something important for the remaining of this article is that the field in the n
 
 ## What are transformers ?
 
-Transformers are a device made from two coupled coils. In transformers used for power supplies, the coupling is made as strong as possible. The details on the various ways to ensure strong coupling are outside of the scope of this article. When a voltage is applied to the first coil, some current flow in it, just enough to produce a magnetic field which would in turn induce in the coil a voltage equal to the applied voltage, as well as a voltage in the second coil. When nothing is connected to the second coil, no current flows into it. When something is connected to the second coil, it draws a current which changes the magnetic field.
+Transformers are a device made from two coupled coils. In transformers used for power supplies, the coupling is made as strong as possible. The details on the various ways to ensure strong coupling are outside of the scope of this article. When a voltage is applied to the first coil, some current flow in it, just enough to produce a magnetic field[^1] which would in turn induce in the coil a voltage equal to the applied voltage, as well as a voltage in the second coil. When nothing is connected to the second coil, no current flows into it. When something is connected to the second coil, it draws a current which changes the magnetic field.
+
+[^1]: The proper name would be 'excitation', but the difference between the magnetic excitation and the magnetic field is outside of the topic of the article.
