@@ -3,20 +3,6 @@ layout: post
 title:  Why RFID antennas should be called neither RFID nor antennas ?
 ---
 
-Today I'm working on the framework of my new website, and I needed some first page to start. I had already some topics to discuss, but they would need some time to prepare something and I wanted something rather quick to start.
-
-Nice topics would include:
-
-* Why a power amplifier on large signal conditions has not only a different impedance than on small signal conditions, but in fact has TWO output impedances.
-
-* Which formula should you use in your Excel spreadsheet to calculate microstrip line impedances.
-
-* Why the filters of Miss X seem to not suffer from the dielectric constant variations of PCB substrates. Hint: the dielectric constant has several values, more to come on this.
-
-But all these topics need time, simulations, and so on. For a starter, I need something quick before I adjust the settings and before I resume the other ideas.
-
-Fortunately, a nice example just felt from the sky.
-
 A friend of mine told me that he was looking for an "expert antenna engineer" to design RFID antennas, but he was not sure he searches well, because the last antenna expert he interview told him that he had designed hundreds of antennad, but never an rfid antenna. Never. Nada.
 
 He tried to search on antenna books some information on rfid antenna to orient his search. He was quickly disappointed. He opened the excellent "Electromagnetic Waves and Antennas" [https://www.ece.rutgers.edu/~orfanidi/ewa/](https://www.ece.rutgers.edu/~orfanidi/ewa/) from Orfanidis, and search for RFID and NFC. Nothing! Same thing with "Antenna Theory: Analysis and Design" from Balanis. This starts bad.
