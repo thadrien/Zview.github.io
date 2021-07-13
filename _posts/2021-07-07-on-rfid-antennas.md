@@ -31,6 +31,40 @@ Something important for the remaining of this article is that the field in the n
 
 ## What are transformers ?
 
-Transformers are a device made from two coupled coils. In transformers used for power supplies, the coupling is made as strong as possible. The details on the various ways to ensure strong coupling are outside of the scope of this article. When a voltage is applied to the first coil, some current flow in it, just enough to produce a magnetic field[^1] which would in turn induce in the coil a voltage equal to the applied voltage, as well as a voltage in the second coil. When nothing is connected to the second coil, no current flows into it. When something is connected to the second coil, it draws a current which changes the magnetic field.
+Transformers are a device made from two coupled coils. In transformers used for power supplies, the coupling is made as strong as possible. The details on the various ways to ensure strong coupling are outside of the scope of this article. When a voltage is applied to the first coil, some current flow in it, just enough to produce a "magnetic field"[^1] which would in turn induce in the coil a voltage equal to the applied voltage, as well as a voltage in the second coil. When nothing is connected to the second coil, no current flows into the second coil. When something is connected to the second coil, it draws a current which changes the magnetic field, which in turn cause more current to flow in the first coil[^2].
+
+For a well designed transformer, when no current in drawn from the second coil, the current in the first coil is low and mainly inductive. This is an important point: the inductive current is out of phase with the voltage so the average power consumed is null: it periodically takes and give back power. And inductive current stores energy but don't consumes it.
+
+Of course, there are always somme losses, but they are low. There is no power which escapes and travels to infinity.
+
+## What is NFC ?
+
+NFC means near field communication. This system allows for a reader device with its power supply to communicate with and to provide enough power to process the requested informations to an electronic chip embedded, for example, in a card. Some modulated high frequency voltage is applied to the coil of the reader devices. This produced in turn a voltage to the coil of the tag which allows it to be powered. The modulation of this high frequency voltages allow to transmit information. The tag transmits information by modulating the current it draws to the coil. Which can be sensed by the reader by monitoring the current in its own coil.
+
+Exactly a transformer action: increase of output current, increase of input current.
+
+There are some differences between such transformers and the typical 50/60 Hz mains electricity transformer: the NFC coils are designed for high frequencies and the coupling is lower because the two coils are separated by a few centimeters.
+
+## Why RFID is not a good term ?
+
+"Radio frequency identification". Radio frequency is a loose term designated almost any alternating thing starting from 100 kHz (old amplitude modulated broadcast radios). Identification is a precise term but applies to lots of situations. For instance, have identifiers for various reasons blueetooth devices, airplanes transponders and so on.
+
+If RFID is a term appliable for lots of things, its almost a term for nothing.
+
+## What are NFC "antennas" ?
+
+Good question. We have seen that their mechanism is not an antenna mechanism but a transformer mechanism. So, antenna is not the proper term. Transformer would apply to the two coils. Half-transformer would be perfect but a bit strange. Coil is perfect.
+
+The only drawback is that coil focuses too much on *how* it is built than *what* is does. But it's still ok because there is not so much ways to design NFC coils than with coils.
+
+## What terms should be used for the expert search ?
+
+Good question.
+
+## Sum up
+
+NFC coils should not be called antennas because they operate in a different ways.
 
 [^1]: The proper name would be 'excitation', but the difference between the magnetic excitation and the magnetic field is outside of the topic of the article.
+
+[^2]: More precisely, the total magnetic field is the difference between the magnetic fields created by the coils, proportional to the difference of the currents weighted by the number of turns. This total magnetic field induces a voltage in both coils. For a constant voltage, the difference between the currents is constant, so when the second current increases, the first current decreases.
