@@ -47,9 +47,9 @@ There are some differences between such transformers and the typical 50/60 Hz ma
 
 ## Why RFID is not a good term ?
 
-"Radio frequency identification". Radio frequency is a loose term designated almost any alternating thing starting from 100 kHz (old amplitude modulated broadcast radios). Identification is a precise term but applies to lots of situations. For instance, have identifiers for various reasons blueetooth devices, airplanes transponders and so on.
+"Radio frequency identification". Radio frequency is a loose term designated almost any alternating thing starting from 100 kHz (old amplitude modulated broadcast radios). Identification is a precise term but applies to lots of situations. For instance, have identifiers for various reasons Bluetooth devices, airplanes transponders and so on.
 
-If RFID is a term appliable for lots of things, its almost a term for nothing.
+If RFID is a term applicable for lots of things, its almost a term for nothing.
 
 ## What are NFC "antennas" ?
 
