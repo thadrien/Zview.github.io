@@ -1,0 +1,253 @@
+/*******************************************************/
+/* f4inx.css                                           */
+/* Hadrien Theveneau, 2022                             */
+/* Parts based on Hyde (https://github.com/poole/hyde) */
+/* and Poole (https://github.com/poole/poole).         */
+/*******************************************************/
+
+/*****************/
+/* Global layout */
+/*****************/
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+}
+body > * {
+  flex: 1;
+}
+.sidebar {
+  /* Uncomment the following line to make sidebar not stretch until bottom. */
+  /* align-self: start; */
+  /* Margins are taken into account differenly in original theme. */
+  max-width: 14rem;
+}
+/* For mobiles */
+@media (max-width: 48em) {
+  .sidebar {
+    flex: 1 100%; 
+    max-width: none;
+  }
+}
+
+html {
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: justify
+}
+@media (min-width: 48em) {
+  html {
+    font-size: 16px;
+  }
+}
+@media (min-width: 58em) {
+  html {
+    font-size: 20px;
+  }
+}
+
+/*********/
+/* Links */
+/*********/
+
+a {
+  color: #268bd2;
+  text-decoration: none;
+}
+a strong {
+  color: inherit;
+}
+/* `:focus` is linked to `:hover` for basic accessibility */
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+/************/
+/* Headings */
+/************/
+
+/* h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5rem;
+  font-weight: bold;
+  line-height: 1.25;
+  color: #313131;
+  text-rendering: optimizeLegibility;
+}
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+h3 {
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+}
+h4, h5, h6 {
+  margin-top: 1rem;
+  font-size: 1rem;
+} */
+
+/***********/
+/* Sidebar */
+/***********/
+
+.sidebar {
+  padding: 2rem 2rem;
+  color: rgba(255, 255, 255, 1);
+  background-color: #000000;
+}
+
+/* Sidebar logo */
+.sidebar img {
+  display: block;
+  margin-left: auto;
+  margin-right:auto;
+}
+
+/* Sidebar links */
+.sidebar a {
+  color: inherit;  /* Turn off usual color of links */
+  text-decoration-thickness: 2px;
+}
+
+/* About section */
+.sidebar-about img {
+  margin-bottom: 0.4em;
+}
+.sidebar-about h1 {
+  /* color: #fff; */
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 3.25rem;
+  line-height: 0.8;
+}
+.sidebar-about .lead {
+  /* font-size: 1.25rem; */
+  /* font-weight: 300; */
+}
+
+/* Sidebar nav */
+/* .sidebar-nav {
+  margin-bottom: 1rem;
+} */
+.sidebar-nav-item {
+  display: block;
+  line-height: 1.75;
+}
+a.sidebar-nav-item:hover,
+a.sidebar-nav-item:focus {
+  text-decoration: underline;
+}
+.sidebar-nav-item.active {
+  font-weight: bold;
+}
+
+/****************/
+/* Print layout */
+/****************/
+
+@media print {
+  body {
+    flex-flow: column;
+  }
+  .sidebar {
+    background-color: unset;
+    color: unset;
+    max-width: unset;
+    padding: unset;
+  }
+  .sidebar img {
+    content: url("../../public/img/f4inx_black.svg");
+    width: 0.83em;
+    vertical-align: baseline;
+    display: unset;
+    margin-left: unset;
+    margin-right: unset;
+    margin-top: unset;
+    margin-bottom: -0.18em;  /* Align the cat */
+  }
+  .sidebar nav {
+    display: none;
+  }
+  .sidebar > *:last-child {
+    margin-bottom: 0;
+  }
+  /* .sidebar > *:last-child:after { */
+    /* content: "<p>LINK</p>"; */
+  /* } */
+}
+
+/****************************************************************************/
+/* Posts and pages                                                          */
+/*                                                                          */
+/* Each post is wrapped in `.post` and is used on default and post layouts. */
+/* Each page is wrapped in `.page` and is only used on the page layout.     */
+/****************************************************************************/
+
+/* .page,
+.post {
+  margin-bottom: 4em;
+} */
+
+/* Blog post or page title */
+.page-title,
+.post-title,
+.post-title a {
+  color: #000000;
+  text-decoration-thickness: 2px;
+}
+
+/* Meta data line below post title */
+.post-date {
+  /* display: block; */
+  /* margin-top: -.5rem; */
+  /* margin-bottom: 1rem; */
+  /* color: #9a9a9a; */
+}
+
+/************/
+/* Contents */
+/************/
+
+.content {
+    padding-top:    1.5rem;  /* Minus title margin */
+    padding-bottom: 4rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    max-width: 37rem;  /* Smaller margins than Hyde/Poole */
+}
+@media (max-width: 48em) {
+  .content {
+    padding-top:    0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left:    0.5rem;
+    padding-right: 0.5rem;
+    max-width: none;
+  }
+}
+@media print {
+  .content {
+    max-width: unset;
+    padding: unset;
+  }
+}
+
+/**************/
+/* Pagination */
+/**************/
+
+.pagination {
+  text-align: center;
+}
+
+/* Pagination items can be `span`s or `a`s */
+.pagination-item {
+  padding: 1rem;
+  border: solid black 1px;
+}
