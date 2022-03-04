@@ -162,6 +162,13 @@ a.sidebar-nav-item:focus {
     max-width: unset;
     padding: unset;
   }
+  .sidebar-about > *:last-child {
+    margin-bottom: 0;
+  }
+  .sidebar > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
   .sidebar img {
     content: url("../../public/img/f4inx_black.svg");
     width: 0.83em;
@@ -174,9 +181,6 @@ a.sidebar-nav-item:focus {
   }
   .sidebar nav {
     display: none;
-  }
-  .sidebar > *:last-child {
-    margin-bottom: 0;
   }
 }
 @media not print {
