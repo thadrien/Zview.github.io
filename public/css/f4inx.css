@@ -70,14 +70,14 @@ a:focus {
 /* Headings */
 /************/
 
-/* h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
   margin-bottom: .5rem;
-  font-weight: bold;
-  line-height: 1.25;
-  color: #313131;
-  text-rendering: optimizeLegibility;
+  /* font-weight: bold; */
+  /* line-height: 1.25; */
+  /* color: #313131; */
+  /* text-rendering: optimizeLegibility; */
 }
-h1 {
+/* h1 {
   font-size: 2rem;
 }
 h2 {
@@ -205,8 +205,8 @@ a.sidebar-nav-item:focus {
 
 /* Meta data line below post title */
 .post-date {
-  /* display: block; */
-  /* margin-top: -.5rem; */
+  display: block;
+  margin-top: -.5rem;
   /* margin-bottom: 1rem; */
   /* color: #9a9a9a; */
 }
