@@ -231,6 +231,15 @@ a.sidebar-nav-item:focus {
     max-width: none;
   }
 }
+@media (max-width: 64em) {
+  .content {
+    padding-top:    2.0rem;
+    padding-bottom: 2.0rem;
+    padding-left:   2.0rem;
+    padding-right:  2.0rem;
+    max-width: 39rem;  /* Smaller margins than Hyde/Poole */
+  }
+}
 @media print {
   .content {
     max-width: unset;
