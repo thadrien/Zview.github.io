@@ -179,7 +179,7 @@ a.sidebar-nav-item:focus {
     margin-top: unset;
     margin-bottom: -0.18em;  /* Align the cat */
   }
-  .sidebar nav {
+  .sidebar nav, .pagination {
     display: none;
   }
 }
