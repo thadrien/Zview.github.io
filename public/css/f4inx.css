@@ -178,9 +178,11 @@ a.sidebar-nav-item:focus {
   .sidebar > *:last-child {
     margin-bottom: 0;
   }
-  /* .sidebar > *:last-child:after { */
-    /* content: "<p>LINK</p>"; */
-  /* } */
+}
+@media not print {
+  .print-only {
+    display: none;
+  }
 }
 
 /****************************************************************************/
