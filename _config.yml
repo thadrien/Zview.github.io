@@ -1,6 +1,6 @@
 # Setup
 title:            F4INX corner
-tagline:          'The corner of Hadrien F4INX: radiofrequency electronics, EM simulations, ...'
+tagline:          'Radiofrequency electronics, EM simulations, ...'
 description:      'The corner of Hadrien F4INX: radiofrequency electronics, EM simulations, ....'
 baseurl:          '/'
 paginate:         5
