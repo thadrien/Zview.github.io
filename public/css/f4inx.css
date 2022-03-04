@@ -185,6 +185,12 @@ a.sidebar-nav-item:focus {
   .sidebar nav {
     display: none;
   }
+  /* When printing, sidebar becomes an header. */
+  /* So, links are displayed as for normal content. */
+  .sidebar > a {
+    color: #268bd2;
+    text-decoration: none;
+  }
 }
 @media not print {
   .print-only {
