@@ -29,5 +29,5 @@
 
   <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
 
-  <a class="print-only" href="{{ site.author.url }}">{{ site.author.url }}</a>
+  <a class="print-only" href="{{ site.author.url  | append: page.url }}">{{ site.author.url  | append: page.url }}</a>
 </div>
