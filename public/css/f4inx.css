@@ -261,6 +261,7 @@ a.sidebar-nav-item:focus {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  align-items: baseline;
 }
 @media (min-width: 30em) {
   .pagination {
@@ -270,12 +271,17 @@ a.sidebar-nav-item:focus {
 
 /* Pagination items can be `span`s or `a`s */
 .pagination-item {
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  padding-left: 2em;
-  padding-right: 2em;
-  border: solid black 1px;
+  padding-top: calc(0.5em - 5px);
+  padding-bottom: calc(0.5em - 5px);
+  padding-left: calc(2em - 5px);
+  padding-right: calc(2em - 5px);
+  border: solid black 5px;  /* To make both buttons equal width. */
   border-radius: 999px;
   color: white;
   background: black;
+}
+.pagination-item:hover {
+  color: black;
+  background: white;
+  border: solid black 5px;
 }
