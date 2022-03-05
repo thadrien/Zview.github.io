@@ -258,11 +258,24 @@ a.sidebar-nav-item:focus {
 /**************/
 
 .pagination {
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+@media (min-width: 30em) {
+  .pagination {
+    margin-top: 3rem;
+  }
 }
 
 /* Pagination items can be `span`s or `a`s */
 .pagination-item {
-  padding: 1rem;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 2em;
+  padding-right: 2em;
   border: solid black 1px;
+  border-radius: 999px;
+  color: white;
+  background: black;
 }
