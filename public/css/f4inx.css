@@ -196,10 +196,10 @@ a.sidebar-nav-item:focus {
 /* Each page is wrapped in `.page` and is only used on the page layout.     */
 /****************************************************************************/
 
-/* .page,
+.page,
 .post {
-  margin-bottom: 4em;
-} */
+  margin-bottom: 2em;
+}
 
 /* Blog post or page title */
 .page-title,
@@ -222,6 +222,9 @@ a.sidebar-nav-item:focus {
   padding-top: 2rem;
   padding-bottom: 2rem;
   border-top: 1px solid black;
+}
+.related h2 {
+  margin-top: 0;
 }
 .related-posts {
   padding-left: 0;
