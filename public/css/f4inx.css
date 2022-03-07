@@ -72,14 +72,17 @@ a:focus {
 
 /* Taken from poole.css */
 
+/* The following settings are already close to the defaults,
+   but allows to keep the same values for headings in .related
+   lists */
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: .5rem;
-  /* font-weight: bold; */
+  font-weight: bold;
   line-height: 1.25;
   /* color: #313131; */
   /* text-rendering: optimizeLegibility; */
 }
-/* h1 {
+h1 {
   font-size: 2rem;
 }
 h2 {
@@ -93,7 +96,7 @@ h3 {
 h4, h5, h6 {
   margin-top: 1rem;
   font-size: 1rem;
-} */
+}
 
 /***********/
 /* Sidebar */
