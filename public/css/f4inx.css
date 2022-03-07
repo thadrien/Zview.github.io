@@ -294,6 +294,20 @@ a.sidebar-nav-item:focus {
   }
 }
 
+/* Citations */
+cite {
+  display: block;
+  margin-left: 1em;
+  margin-right: 1em;
+  quotes: "«" "»";
+}
+cite:before {
+  content: open-quote;
+}
+cite:after {
+  content: close-quote;
+}
+
 /*************/
 /* Footnotes */
 /*************/
