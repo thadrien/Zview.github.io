@@ -22,8 +22,6 @@ title: Home
 <div class="pagination">
   {% if paginator.next_page %}
     <a class="pagination-item older" href="{{ paginator.next_page_path | absolute_url }}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
   {% endif %}
   {% if paginator.previous_page %}
     {% if paginator.page == 2 %}
@@ -31,7 +29,5 @@ title: Home
     {% else %}
       <a class="pagination-item newer" href="{{ paginator.previous_page_path | absolute_url }}">Newer</a>
     {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
   {% endif %}
 </div>
