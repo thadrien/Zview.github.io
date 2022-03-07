@@ -294,6 +294,14 @@ a.sidebar-nav-item:focus {
   }
 }
 
+/*************/
+/* Footnotes */
+/*************/
+
+a.reversefootnote {
+  color: black;  /* People don't need color to guess they are clickable */
+}
+
 /**************/
 /* Pagination */
 /**************/
