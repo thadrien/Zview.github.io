@@ -299,7 +299,7 @@ a.sidebar-nav-item:focus {
 /*************/
 
 a.reversefootnote {
-  color: black;  /* People don't need color to guess they are clickable */
+  color: inherit;  /* People don't need color to guess they are clickable */
 }
 
 /**************/
