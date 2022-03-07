@@ -238,11 +238,14 @@ a.sidebar-nav-item:focus {
 }
 .related-posts li small {
   font-size: 75%;
-  color: #999;
+  font-weight: normal;
+  color: black;
 }
 .related-posts li a:hover {
   /* color: #268bd2; */
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: black;
+  text-decoration-thickness: 1px;
 }
 .related-posts li a:hover small {
   /* color: inherit; */
