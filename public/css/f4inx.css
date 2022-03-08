@@ -352,4 +352,5 @@ a.reversefootnote {
   color: black;
   background: white;
   border: solid black 5px;
+  text-decoration: none;
 }
