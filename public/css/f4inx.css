@@ -348,7 +348,8 @@ a.reversefootnote {
   color: white;
   background: black;
 }
-.pagination-item:hover {
+.pagination-item:hover,
+.pagination-item.hover-test {
   color: black;
   background: white;
   border: solid black 5px;
