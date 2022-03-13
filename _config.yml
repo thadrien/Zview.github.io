@@ -18,4 +18,3 @@ collections:
 plugins:
   # Jekyll dependencies
   - jekyll-paginate
-  - jekyll-gist
