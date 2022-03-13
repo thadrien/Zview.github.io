@@ -10,6 +10,10 @@ author:
   name:           'Hadrien Theveneau'
   url:            https://f4inx.github.io
 
+# Collections:
+collections:
+  - regtests
+
 # Gems
 plugins:
   # Jekyll dependencies
