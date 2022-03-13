@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+order: 2
 ---
 
 <img src="/public/img/f4inx-black.svg"/>

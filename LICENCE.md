@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Licence
+order: 3
 ---
 ## Released under BSD 3-clause licence
 
