@@ -2,6 +2,7 @@
 layout: post
 title:  Lorem ipsum
 date: 2022-03-12
+sitemap: false
 ---
 
 Lorem ipsum dolor sit amet, <a href='https://fr.wikipedia.org/wiki/Lorem_ipsum'>consectetur adipiscing elit</a>. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.

@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  Why RFID antennas should be called neither RFID nor antennas ?
+last_modified_at: 2021-07-21 00:22:31 +0200
 ---
 
 A friend of mine told me that he was looking for an "expert antenna engineer" to design RFID antennas, but he was not sure he searches well, because the last antenna expert he interview told him that he had designed hundreds of antennas, but never an rfid antenna. Never. Nada.

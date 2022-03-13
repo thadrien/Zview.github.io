@@ -2,6 +2,7 @@
 layout: post
 title:  Lorem ipsum
 date: 2022-03-12
+sitemap: false
 ---
 
 Nulla sollicitudin. Fusce varius, ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus sapien eros vitae ligula. Pellentesque rhoncus nunc et augue. Integer id felis.
