@@ -178,7 +178,7 @@ a.sidebar-nav-item:focus {
     margin-bottom: 0;
   }
   .sidebar img {
-    content: url("../../public/img/f4inx_black.svg");
+    content: url("../../public/img/f4inx-black.svg");
     width: 0.83em;
     vertical-align: baseline;
     display: unset;
