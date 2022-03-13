@@ -23,6 +23,8 @@ body > * {
   /* align-self: start; */
   /* Margins are taken into account differenly in original theme. */
   max-width: 14rem;
+  /* Force the sidebar to be long when content is short */
+  min-height: 100vh;
 }
 /* For mobiles */
 @media (max-width: 48em) {
@@ -164,6 +166,9 @@ a.sidebar-nav-item:focus {
     color: unset;
     max-width: unset;
     padding: unset;
+    /* min-height forces the sidebar to be long when content is short */
+    /* Useless by printing. */
+    min-height: unset;
   }
   .sidebar-about > *:last-child {
     margin-bottom: 0;
