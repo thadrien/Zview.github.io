@@ -14,9 +14,14 @@ author:
 collections:
   - regtests
 
+# Feed
+feed:
+  path: /atom.xml
+
 # Gems
 plugins:
   # Jekyll dependencies
   - jekyll-paginate
+  - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
