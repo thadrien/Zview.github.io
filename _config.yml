@@ -19,3 +19,4 @@ plugins:
   # Jekyll dependencies
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-seo-tag
