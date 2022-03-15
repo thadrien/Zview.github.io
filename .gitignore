@@ -43,3 +43,6 @@ node_modules
 
 # Ignore jekyll generated files
 .jekyll-metadata
+
+# Ignore Gemfile.lock
+Gemfile.lock
