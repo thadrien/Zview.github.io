@@ -313,6 +313,12 @@ cite:after {
   content: close-quote;
 }
 
+/* Images */
+img {
+  max-width: 100%;
+}
+
+
 /*************/
 /* Footnotes */
 /*************/
