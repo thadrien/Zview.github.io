@@ -27,7 +27,7 @@
     {% endfor %}
   </nav>
 
-  <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
+  <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. All rights reserved.</p>
 
   <a class="print-only" href="{{ site.author.url  | append: page.url }}">{{ site.author.url  | append: page.url }}</a>
 </div>
