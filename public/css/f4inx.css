@@ -92,6 +92,9 @@ h2 {
   margin-top: 1rem;
   font-size: 1.5rem;
 }
+h2 + h3 {
+  margin-top: 1rem;
+}
 h3 {
   margin-top: 1.5rem;
   font-size: 1.25rem;
@@ -249,6 +252,7 @@ a.sidebar-nav-item:focus {
 }
 .related-posts h3 {
   margin-top: 0;
+  font-size: 1rem;  /* Better separation in this use case. */
 }
 .related-posts li small {
   font-size: 75%;
