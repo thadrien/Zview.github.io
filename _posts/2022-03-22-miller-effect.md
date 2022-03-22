@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Miller effect and solutions
+title: Miller effect and solutions.
 permalink: /posts/miller-effect-1.html
 last_modified_at: 2022-03-22 19:42
 ---
