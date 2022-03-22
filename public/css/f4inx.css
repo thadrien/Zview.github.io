@@ -268,6 +268,15 @@ a.sidebar-nav-item:focus {
 .related-posts li a:hover small {
   /* color: inherit; */
 }
+/* Print links urls only in related posts section since they */
+/* are usually already shown in the remaining of the site.   */
+@media print {
+  .related-posts li a:after {
+    content: attr(href);
+  font-size: 75%;
+  font-weight: normal;
+  }
+}
 
 
 /************/
