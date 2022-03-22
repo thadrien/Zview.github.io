@@ -12,7 +12,8 @@ author:
 
 # Collections:
 collections:
-  - regtests
+  regtests:
+    output: true
 
 # Feed
 feed:
