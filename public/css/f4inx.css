@@ -59,6 +59,9 @@ a {
   color: #268bd2;
   text-decoration: none;
 }
+h1 a,
+h2 a,
+h3 a,
 a strong {
   color: inherit;
 }
