@@ -1,3 +1,5 @@
+---
+---
 /*******************************************************/
 /* f4inx.css                                           */
 /* Hadrien Theveneau, 2022                             */
@@ -184,7 +186,7 @@ a.sidebar-nav-item:focus {
     margin-bottom: 0;
   }
   .sidebar img {
-    content: url("../../style/img/f4inx-black.svg");
+    content: url("{{ '/style/img/f4inx-black.svg' | absolute_url}}");
     width: 0.83em;
     vertical-align: baseline;
     display: unset;
