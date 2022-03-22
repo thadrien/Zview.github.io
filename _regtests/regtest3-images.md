@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Images regtest.
+title:  Images regtest
 date: 2022-03-22
 sitemap: false
 ---
