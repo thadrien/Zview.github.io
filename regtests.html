@@ -8,7 +8,7 @@ sitemap: false
   {% for regtest in site.regtests %}
     <div class="post">
       <h1 class="post-title">
-        <a href="{{ post.url | absolute_url }}">
+        <a href="{{ regtest.url | absolute_url }}">
           {{ regtest.title }}
         </a>
       </h1>
