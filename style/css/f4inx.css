@@ -228,6 +228,10 @@ a.sidebar-nav-item:focus {
   margin-top: 2em;
   border-top: 2px solid;
 }
+.post:last-of-type {
+  padding-bottom: 1em;  /* FIXME: better substraction. */
+  border-bottom: 2px solid;
+}
 
 /* Blog post or page title */
 .page-title,
