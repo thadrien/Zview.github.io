@@ -11,9 +11,7 @@ He tried to search on antenna books some information on rfid antenna to orient h
 
 The *coup de grâce* comes from Antenna Theory ([https://www.antenna-theory.com/definitions/nfc-antenna.php](https://www.antenna-theory.com/definitions/nfc-antenna.php)):
 
-<cite>
-Therefore, NFC antennas are not really antennas, in that no one cares about typical antenna parameters, such as the radiation pattern or the antenna gain
-</cite>
+> Therefore, NFC antennas are not really antennas, in that no one cares about typical antenna parameters, such as the radiation pattern or the antenna gain
 
 Here we go! Now, time for more explanations.
 

@@ -307,17 +307,24 @@ a.sidebar-nav-item:focus {
 }
 
 /* Citations */
+blockquote,
 cite {
-  display: block;
   margin-left: 1em;
   margin-right: 1em;
-  quotes: "«" "»";
 }
-cite:before {
+blockquote {
+  display: block;
+  quotes: "«\2005" "\2005»";
+  font-style: italic;
+}
+blockquote > p:first-child:before {
   content: open-quote;
 }
-cite:after {
+blockquote > p:last-child:after {
   content: close-quote;
+}
+cite {
+  font-style: inherit;
 }
 
 /* Images */
