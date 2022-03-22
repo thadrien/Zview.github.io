@@ -328,6 +328,10 @@ td {
 /* Footnotes */
 /*************/
 
+.footnotes {
+  border-top: 1px solid black;
+}
+
 a.reversefootnote {
   color: inherit;  /* People don't need color to guess they are clickable */
 }
