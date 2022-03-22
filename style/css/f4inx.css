@@ -223,6 +223,12 @@ a.sidebar-nav-item:focus {
   margin-bottom: 2em;
 }
 
+/* Separation bar between posts */
+.post + .post {
+  margin-top: 2em;
+  border-top: 2px solid;
+}
+
 /* Blog post or page title */
 .page-title,
 .post-title,
