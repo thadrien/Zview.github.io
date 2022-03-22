@@ -318,6 +318,11 @@ img {
   max-width: 100%;
 }
 
+/* Tables */
+td {
+  line-height: 0;
+}
+
 
 /*************/
 /* Footnotes */
