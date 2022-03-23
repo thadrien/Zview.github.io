@@ -368,6 +368,16 @@ td {
   line-height: 0;
 }
 
+/* Math equations centering */
+p.has-mjx-container {
+  display: flex;
+}
+p mjx-container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 /*************/
 /* Footnotes */

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Lorem ipsum
+title:  Base test
 date: 2022-03-12
 sitemap: false
 ---
@@ -12,5 +12,3 @@ Lorem ipsum dolor sit amet, <a href='https://fr.wikipedia.org/wiki/Lorem_ipsum'>
 * Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. <a href='https://fr.wikipedia.org/wiki/Lorem_ipsum'>Cras vestibulum bibendum augue.</a>
 
 Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh.
-
-> Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit. Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut orci vel massa suscipit pulvinar.
