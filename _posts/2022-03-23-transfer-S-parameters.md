@@ -5,7 +5,7 @@ permalink: /posts/transfer-S-parameters.html
 last_modified_at: 2022-03-23 13:30
 ---
 <script>
-MathJax = { loader: {load: ['input/asciimath', 'output/chtml']} };
+MathJax = { loader: {load: ['input/asciimath', 'output/chtml', 'ui/menu']} };
 </script>
 <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js">
 </script>
