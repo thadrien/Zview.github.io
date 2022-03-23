@@ -223,6 +223,16 @@ a.sidebar-nav-item:focus {
   margin-bottom: 2em;
 }
 
+/* Separation bar between posts */
+.post + .post {
+  margin-top: 2em;
+  border-top: 2px solid;
+}
+.post:last-of-type {
+  padding-bottom: 1em;  /* FIXME: better substraction. */
+  border-bottom: 2px solid;
+}
+
 /* Blog post or page title */
 .page-title,
 .post-title,
@@ -363,8 +373,20 @@ td {
 /* Footnotes */
 /*************/
 
-.footnotes {
+.footnotes{
   border-top: 1px solid black;
+}
+/* 80% size only in main page post footnotes */
+.posts > .post > .footnotes{
+  border-top: none;
+}
+.posts > .post > .footnotes:before {
+  border-top: 1px solid black;
+  content: " ";
+  display: block;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 a.reversefootnote {
