@@ -239,6 +239,11 @@ a.sidebar-nav-item:focus {
   /* color: #9a9a9a; */
 }
 
+/* Introductory note at beginning */
+.begin-note {
+  font-style: italic;
+}
+
 /* Related posts */
 .related {
   padding-top: 2rem;
