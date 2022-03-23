@@ -373,13 +373,20 @@ td {
 /* Footnotes */
 /*************/
 
-.footnotes:before {
+.footnotes{
+  border-top: 1px solid black;
+}
+/* 80% size only in main page post footnotes */
+.posts > .post > .footnotes{
+  border-top: none;
+}
+.posts > .post > .footnotes:before {
+  border-top: 1px solid black;
   content: " ";
   display: block;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  border-top: 1px solid black;
 }
 
 a.reversefootnote {
