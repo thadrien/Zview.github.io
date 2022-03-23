@@ -4,7 +4,10 @@ title: Transfer S parameters.
 permalink: /posts/transfer-S-parameters.html
 last_modified_at: 2022-03-23 13:30
 ---
-<script type="text/javascript" async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+<script>
+MathJax = { loader: {load: ['input/asciimath', 'output/chtml']} };
+</script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js">
 </script>
 
 <p class="begin-note">This content was originally published on Microwaves 101 (<a href="https://www.microwaves101.com/encyclopedias/transfer-s-parameters">https://www.microwaves101.com/encyclopedias/transfer-s-parameters</a>). Many thanks to Steve for hosting the original version. Have a look on his website for more interesting content.</p>
