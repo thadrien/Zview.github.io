@@ -19,6 +19,9 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ '/atom.xml' | absolute_url }}">
 
   {% feed_meta %}
-  {% seo %}
+  {% comment %}
+    Disable SEO title tags because manually handled.
+  {% endcomment %}
+  {% seo title=false %}
 
 </head>
