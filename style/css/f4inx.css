@@ -119,11 +119,24 @@ h4, h5, h6 {
 }
 
 /* Sidebar logo */
-.sidebar img {
+.sidebar-about img {
   display: block;
   margin-left: auto;
   margin-right:auto;
+  margin-bottom: 0.4em;
   width: 85%;
+}
+@media (max-width: 48em) {
+  .sidebar-about img {
+    width: 0.83em;
+    vertical-align: baseline;
+    display: unset;
+    margin-left: unset;
+    margin-right: unset;
+    margin-top: unset;
+    /* Align the cat */
+    margin-bottom: -0.18em;
+  }
 }
 
 /* Sidebar links */
@@ -133,9 +146,6 @@ h4, h5, h6 {
 }
 
 /* About section */
-.sidebar-about img {
-  margin-bottom: 0.4em;
-}
 .sidebar-about h1 {
   /* color: #fff; */
   margin-top: 0;
