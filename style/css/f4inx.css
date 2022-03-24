@@ -81,6 +81,11 @@ a:focus {
 
 /* Taken from poole.css */
 
+/* Space for first title already taken into account in .contents */
+.content h1:first-child {
+  margin-top: 0;
+}
+
 /* The following settings are already close to the defaults,
    but allows to keep the same values for headings in .related
    lists */
@@ -314,7 +319,7 @@ a.sidebar-nav-item:focus {
 /************/
 
 .content {
-    padding-top:    1.5rem;  /* Minus title margin */
+    padding-top:    3rem;  /* To visually look likes a square */
     padding-bottom: 4rem;
     padding-left: 4rem;
     padding-right: 4rem;
