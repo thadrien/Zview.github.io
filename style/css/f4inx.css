@@ -125,6 +125,19 @@ h4, h5, h6 {
   margin-right:auto;
   width: 85%;
 }
+@media (max-width: 48em) {
+  .sidebar-about img {
+    width: 0.83em;
+    vertical-align: baseline;
+    display: unset;
+    margin-left: unset;
+    margin-right: unset;
+    margin-top: unset;
+    /* Align the cat */
+    /* FIXME: Remove !important. */
+    margin-bottom: -0.18em !important;
+  }
+}
 
 /* Sidebar links */
 .sidebar a {
