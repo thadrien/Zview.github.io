@@ -16,13 +16,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. (<a href="https://en.wi
 
 Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.
 
-<p class="has-mjx-container" markdown="0">
+<p markdown="0">
 `[[b_1],[a_1]] = T \ [[a_2],[b_2]]`
 </p>
 
 Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim.
 
-<p class="has-mjx-container" markdown="0">
+<p markdown="0">
 `T = T_1 \ T_2 \ cdots \ T_N`
 </p>
 

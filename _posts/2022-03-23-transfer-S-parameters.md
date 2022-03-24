@@ -21,7 +21,7 @@ Transfer S parameters are a convenient way to express S parameters in a way that
 
 It is very counter-intuitive, but expressing input in function of output and not the inverse allows to deal with unilateral blocks, what the other convention doesn’t allow. They are most often defined in the following way:
 
-<p class="has-mjx-container" markdown="0">
+<p markdown="0">
 `[[b_1],[a_1]] = T \ [[a_2],[b_2]]`
 </p>
 
@@ -29,7 +29,7 @@ Be careful! Another convention exists, with a and b inverted. Some people even e
 
 With the definition used in this page, the transfer parameter matrix of a chain of elements can be calculated as follows:
 
-<p class="has-mjx-container" markdown="0">
+<p markdown="0">
 `T = T_1 \ T_2 \ cdots \ T_N`
 </p>
 

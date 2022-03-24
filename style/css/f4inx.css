@@ -387,13 +387,11 @@ td {
 }
 
 /* Math equations centering */
-p.has-mjx-container {
-  display: flex;
-}
 p mjx-container {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 
 /* Math spacing in tables */
