@@ -4,15 +4,7 @@ title:  Regtest MathJax
 date: 2022-03-22
 sitemap: false
 ---
-<script>
-/* See https://github.com/remarkjs/remark/discussions/572 for asciimath delimiter choice. */
-MathJax = {
-  loader: { load: ['input/asciimath', 'output/chtml', 'ui/menu'] },
-  asciimath: { delimiters: [['&&', '&&']] }
-};
-</script>
-<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js">
-</script>
+{%- include mathjax-asciimath.html %}
 
 <p class="begin-note">
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. (<a href="https://en.wikipedia.org/wiki/Lorem_ipsum">https://en.wikipedia.org/wiki/Lorem_ipsum</a>) Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
