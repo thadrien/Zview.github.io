@@ -17,7 +17,10 @@ The gate to source capacitance, Cgs, sees at its terminals only the gate voltage
 
 <cite>-- Miller's original article, [http://www.mit.edu/~klund/papers/jmiller.pdf](http://www.mit.edu/~klund/papers/jmiller.pdf), page 374</cite>
 
-![name of the image]({{ "/posts/miller-effect/miller-effect-schematic-v2.1-cropped.svg" | relative_url }})
+{% comment %}
+Manually included to set class.
+{% endcomment %}
+<img class="schematic" src="{{ '/posts/miller-effect/miller-effect-schematic-v2.1-cropped.svg' | relative_url }}" >
 
 This increase of the apparent capacitance is problematic in broad-band circuits because the bandwidth is reduced when the capacitance increases. In narrowband circuits, the Miller effect is less of a problem because capacitance can always be compensated for by the inductance of the bias circuits. However, keep in mind that the bandwidth of a circuit must be sufficient to keep a margin for process variations.
 
@@ -27,7 +30,10 @@ Some remedies to this problems are:
 
 * Use a balanced amplifier and compensate Cgd by another capacitor of the same value connected to the opposite voltage, like explained in following picture. We let the derivation to the reader. However, two problems limits that cool scheme. First, oscillation can occur. Second, the layout needs an [RF-RF cross-over](https://www.microwaves101.com/encyclopedias/rf-rf-crossovers), which is not practical.
 
-![name of the image]({{ "/posts/miller-effect/miller-effect-balanced-v3-cropped.svg" | relative_url }})
+{% comment %}
+Manually included to set class.
+{% endcomment %}
+<img class="schematic" src="{{ '/posts/miller-effect/miller-effect-balanced-v3-cropped.svg' | relative_url }}" >
 
 * Decrease the load impedance seen by the transistor, to reduce the voltage gain. Remember that Miller effect is an effect of the voltage gain. Two schemes for that are the cascode and the Cherry-Hooper amplifier.
 
@@ -35,7 +41,10 @@ Some remedies to this problems are:
 
 The image below illustrates a common way to alleviate the Miller effect: the cascode. The load impedance seen by the first transistor is dramatically reduced by the second transistor. In such a configuration, the voltage gain of the first transistor is approximately 1[^1]. Since the voltage gain is low, the Miller effect is drastically reduced.
 
-![name of the image]({{ "/posts/miller-effect/miller-effect-cascode-v2.1-cropped.svg" | relative_url }})
+{% comment %}
+Manually included to set class.
+{% endcomment %}
+<img class="schematic" src="{{ '/posts/miller-effect/miller-effect-cascode-v2.1-cropped.svg' | relative_url }}" >
 
 The second transistor has voltage gain but no current gain. And the Miller effect is eliminated because the gate is grounded for high frequencies. This scheme is usable only up to ft, not fmax. In general, ft is lower than fmax, at least for FET transistors. This should be kept in mind when designing really high frequency amplifiers, for example in the millimeter wave range.
 Also, an other problem of this scheme is an huge tendency to oscillate. A damping RC network is almost always added to the gate of the second transistor stage to compensate for this problem.

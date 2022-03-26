@@ -81,7 +81,7 @@ a:focus {
 
 /* Taken from poole.css */
 
-/* Space for first post title already taken into account in .contents */
+/* Space for first title already taken into account in .contents */
 .content .post:first-child h1 {
   margin-top: 0;
 }
@@ -255,7 +255,7 @@ a.sidebar-nav-item:focus {
 .page-title,
 .post-title,
 .post-title a {
-  color: #000000;
+  color: inherit;
   text-decoration-thickness: 2px;
 }
 
@@ -292,16 +292,11 @@ a.sidebar-nav-item:focus {
 .related-posts li small {
   font-size: 75%;
   font-weight: normal;
-  color: black;
 }
 .related-posts li a:hover {
   /* color: #268bd2; */
   text-decoration: underline;
-  text-decoration-color: black;
   text-decoration-thickness: 1px;
-}
-.related-posts li a:hover small {
-  /* color: inherit; */
 }
 /* Print links urls only in related posts section since they */
 /* are usually already shown in the remaining of the site.   */
@@ -463,4 +458,41 @@ a.reversefootnote {
   background: white;
   border: solid black 5px;
   text-decoration: none;
+}
+
+/**************/
+/* Pagination */
+/**************/
+@media (prefers-color-scheme: dark) {
+  body {
+    background: black;
+    color: white;
+  }
+  .sidebar {
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+  }
+}
+
+/*************/
+/* Dark mode */
+/*************/
+@media (prefers-color-scheme: dark) {
+  body {
+    background: black;
+    color: white;
+  }
+  .sidebar {
+    border-right: 2px solid white;
+    border-bottom: none;
+  }
+  @media (max-width: 48em) {
+    .sidebar {
+      border-right: none;
+      border-bottom: 2px solid white;
+    }
+  }
+  .schematic {
+    filter: invert();
+  }
 }
