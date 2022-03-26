@@ -255,7 +255,7 @@ a.sidebar-nav-item:focus {
 .page-title,
 .post-title,
 .post-title a {
-  color: #000000;
+  color: inherit;
   text-decoration-thickness: 2px;
 }
 
@@ -463,4 +463,38 @@ a.reversefootnote {
   background: white;
   border: solid black 5px;
   text-decoration: none;
+}
+
+/**************/
+/* Pagination */
+/**************/
+@media (prefers-color-scheme: dark) {
+  body {
+    background: black;
+    color: white;
+  }
+  .sidebar {
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+  }
+}
+
+/*************/
+/* Dark mode */
+/*************/
+@media (prefers-color-scheme: dark) {
+  body {
+    background: black;
+    color: white;
+  }
+  .sidebar {
+    border-right: 2px solid white;
+    border-bottom: none;
+  }
+  @media (max-width: 48em) {
+    .sidebar {
+      border-right: none;
+      border-bottom: 2px solid white;
+    }
+  }
 }
