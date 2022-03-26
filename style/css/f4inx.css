@@ -60,7 +60,7 @@ html {
 /*********/
 
 a {
-  --links-color: #268bd2;
+  --links-color: darkblue;
   color: var(--links-color);
   text-decoration: none;
 }
