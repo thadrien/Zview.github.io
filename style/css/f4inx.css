@@ -303,8 +303,8 @@ a.sidebar-nav-item:focus {
 @media print {
   .related-posts li a:after {
     content: attr(href);
-  font-size: 75%;
-  font-weight: normal;
+    font-size: 75%;
+    font-weight: normal;
   }
 }
 
