@@ -81,8 +81,8 @@ a:focus {
 
 /* Taken from poole.css */
 
-/* Space for first title already taken into account in .contents */
-.content h1:first-child {
+/* Space for first post title already taken into account in .contents */
+.content .post:first-child h1 {
   margin-top: 0;
 }
 
