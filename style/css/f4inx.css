@@ -518,3 +518,18 @@ a.reversefootnote {
     filter: invert();
   }
 }
+
+/************/
+/* Articles */
+/************/
+.footnotes li cite {
+  margin-left: inherit;
+  margin-right: inherit;
+}
+.footnotes li .article-title {
+  font-style: italic;
+}
+.footnotes li .article-journal {
+}
+.footnotes li time {
+}
