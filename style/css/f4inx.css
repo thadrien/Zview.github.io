@@ -81,7 +81,7 @@ a:focus {
 
 /* Taken from poole.css */
 
-/* Space for first post title already taken into account in .contents */
+/* Space for first title already taken into account in .contents */
 .content .post:first-child h1 {
   margin-top: 0;
 }
@@ -496,5 +496,8 @@ a.reversefootnote {
       border-right: none;
       border-bottom: 2px solid white;
     }
+  }
+  .schematic {
+    filter: invert();
   }
 }
