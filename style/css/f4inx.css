@@ -341,7 +341,12 @@ a.sidebar-nav-item:focus {
 @media print {
   .content {
     max-width: unset;
-    padding: unset;
+    /* Remove padding because paper has already margins.     */
+    padding-left: unset;
+    padding-right: unset;
+    /* Keep top and bottom paddings for contents separation. */
+    padding-top:    2.0rem;
+    padding-bottom: 2.0rem;
   }
 }
 
