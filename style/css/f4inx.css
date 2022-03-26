@@ -292,16 +292,11 @@ a.sidebar-nav-item:focus {
 .related-posts li small {
   font-size: 75%;
   font-weight: normal;
-  color: black;
 }
 .related-posts li a:hover {
   /* color: #268bd2; */
   text-decoration: underline;
-  text-decoration-color: black;
   text-decoration-thickness: 1px;
-}
-.related-posts li a:hover small {
-  /* color: inherit; */
 }
 /* Print links urls only in related posts section since they */
 /* are usually already shown in the remaining of the site.   */
