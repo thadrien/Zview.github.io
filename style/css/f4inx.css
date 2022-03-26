@@ -292,7 +292,9 @@ a.sidebar-nav-item:focus {
   font-size: 75%;
   font-weight: normal;
 }
-.related-posts li a:hover {
+/* `:focus` is linked to `:hover` for basic accessibility */
+.related-posts li a:hover,
+.related-posts li a:focus {
   text-decoration: underline;
   text-decoration-thickness: 1px;
 }
