@@ -60,7 +60,8 @@ html {
 /*********/
 
 a {
-  color: #268bd2;
+  --links-color: #268bd2;
+  color: var(--links-color);
   text-decoration: none;
 }
 h1 a,
@@ -152,7 +153,6 @@ h4, h5, h6 {
 
 /* About section */
 .sidebar-about h1 {
-  /* color: #fff; */
   margin-top: 0;
   margin-bottom: 0;
   font-size: 3.25rem;
@@ -219,7 +219,7 @@ a.sidebar-nav-item:focus {
   /* When printing, sidebar becomes an header. */
   /* So, links are displayed as for normal content. */
   .sidebar > a {
-    color: #268bd2;
+    color: var(--links-color);
     text-decoration: none;
   }
 }
@@ -264,7 +264,6 @@ a.sidebar-nav-item:focus {
   display: block;
   margin-top: -.5rem;
   /* margin-bottom: 1rem; */
-  /* color: #9a9a9a; */
 }
 
 /* Introductory note at beginning */
@@ -294,7 +293,6 @@ a.sidebar-nav-item:focus {
   font-weight: normal;
 }
 .related-posts li a:hover {
-  /* color: #268bd2; */
   text-decoration: underline;
   text-decoration-thickness: 1px;
 }
@@ -303,8 +301,8 @@ a.sidebar-nav-item:focus {
 @media print {
   .related-posts li a:after {
     content: attr(href);
-  font-size: 75%;
-  font-weight: normal;
+    font-size: 75%;
+    font-weight: normal;
   }
 }
 
