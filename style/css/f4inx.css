@@ -60,7 +60,8 @@ html {
 /*********/
 
 a {
-  color: #268bd2;
+  --links-color: #268bd2;
+  color: var(--links-color);
   text-decoration: none;
 }
 h1 a,
@@ -219,7 +220,7 @@ a.sidebar-nav-item:focus {
   /* When printing, sidebar becomes an header. */
   /* So, links are displayed as for normal content. */
   .sidebar > a {
-    color: #268bd2;
+    color: var(--links-color);
     text-decoration: none;
   }
 }
