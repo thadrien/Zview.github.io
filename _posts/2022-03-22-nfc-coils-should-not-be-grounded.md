@@ -15,9 +15,35 @@ However, for the very same reasons, it's not a good idea to put a ground plane s
 
 The following pictures produced with OpenEMS shows clearly this effect:
 
-| ![name of the image]({{ "/posts/nfc-coils-should-not-be-grounded/loop_v2_H_mid.png" | relative_url }}) | ![name of the image]({{ "/posts/nfc-coils-should-not-be-grounded/loop_v2_nognd_H_mid.png" | relative_url }}) |
-| ![name of the image]({{ "/posts/nfc-coils-should-not-be-grounded/loop_v2_H_10mm.png" | relative_url }}) | ![name of the image]({{ "/posts/nfc-coils-should-not-be-grounded/loop_v2_nognd_H_10mm.png" | relative_url }}) |
-| ![name of the image]({{ "/posts/nfc-coils-should-not-be-grounded/loop_v2_H_Xcut.png" | relative_url }}) | ![name of the image]({{ "/posts/nfc-coils-should-not-be-grounded/loop_v2_nognd_H_Xcut.png"  | relative_url }}) |
+{% comment %}
+Manually included to set alt texts.
+{% endcomment %}
+<table>
+<tr>
+<td>
+<img src="{{ '/posts/nfc-coils-should-not-be-grounded/loop_v2_H_mid.png' | relative_url }}" title="Simulation of magnetic field, grounded coil, between ground plane and coil.">
+</td>
+<td>
+<img src="{{ '/posts/nfc-coils-should-not-be-grounded/loop_v2_nognd_H_mid.png' | relative_url }}" title="Simulation of magnetic field, non-grounded coil, between missing ground plane and coil.">
+</td>
+</tr>
+<tr>
+<td>
+<img src="{{ '/posts/nfc-coils-should-not-be-grounded/loop_v2_H_10mm.png' | relative_url }}" title="Simulation of magnetic field, grounded coil, 10 mm height from ground plane.">
+</td>
+<td>
+<img src="{{ '/posts/nfc-coils-should-not-be-grounded/loop_v2_nognd_H_10mm.png' | relative_url }}" title="Simulation of magnetic field, non-grounded coil, 10 mm height from missing ground plane.">
+</td>
+</tr>
+<tr>
+<td>
+<img src="{{ '/posts/nfc-coils-should-not-be-grounded/loop_v2_H_Xcut.png' | relative_url }}" title="Simulation of magnetic field, grounded coil, X plane cut.">
+</td>
+<td>
+<img src="{{ '/posts/nfc-coils-should-not-be-grounded/loop_v2_nognd_H_Xcut.png' | relative_url }}" title="Simulation of magnetic field, non-grounded coil, X plane cut.">
+</td>
+</tr>
+</table>
 
 Magnetic field is shown in all figures. Left side are with a solid ground plane, right side is without. Line 1 is between the coil and the bottom of the PCB. Line 2 is at 10 mm height. Last line is a perpendicular cut.
 
