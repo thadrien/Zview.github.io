@@ -203,8 +203,12 @@ a.sidebar-nav-item:focus {
 .sidebar ul {
   margin-top: inherit;
   margin-bottom: inherit;
-  padding-left: 1rem;
+  padding-left: 2em;
   list-style: none;
+}
+.sidebar li {
+  /* Hanging keyword experimental. */
+  text-indent: -1em;
 }
 
 /* Space for last already taken into account in .sidebar */
