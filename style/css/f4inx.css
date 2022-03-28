@@ -203,7 +203,7 @@ a.sidebar-nav-item:focus {
 .sidebar ul {
   margin-top: inherit;
   margin-bottom: inherit;
-  padding-left: 2em;
+  padding-left: 1em;
   list-style: none;
 }
 .sidebar li {
