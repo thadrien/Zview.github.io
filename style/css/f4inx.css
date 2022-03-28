@@ -31,7 +31,7 @@ body > * {
 /* For mobiles */
 @media (max-width: 48em) {
   .sidebar {
-    flex: 1 100%; 
+    flex: 1 100%;
     max-width: none;
     /* Since the sidebar is at the head, make it as short as possible. */
     min-height: unset;
