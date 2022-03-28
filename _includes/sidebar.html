@@ -17,6 +17,17 @@
       `layout: page` in the front-matter. See readme for usage.
     {% endcomment %}
 
+    <h2>Posts</h2>
+    <ul>
+      {% for post in site.posts %}
+        <li>
+          <a class="sidebar-nav-item{% if page.url == post.url %} active{% endif %}" href="{{ post.url }}">
+            {{ post.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+
     {% for node in site.pages | sort:"order" %}
       {% if node.title != null %}
         {% if node.layout == "page" %}

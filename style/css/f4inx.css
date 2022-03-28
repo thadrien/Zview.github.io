@@ -193,6 +193,20 @@ a.sidebar-nav-item:focus {
   font-weight: bold;
 }
 
+/* Sidebar recent posts*/
+.sidebar h2 {
+  margin-top: inherit;
+  margin-bottom: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+.sidebar ul {
+  margin-top: inherit;
+  margin-bottom: inherit;
+  padding-left: 1rem;
+  list-style: none;
+}
+
 /* Space for last already taken into account in .sidebar */
 /* when sidebar is on top in mobile viewing.             */
 /*                                                       */
