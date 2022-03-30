@@ -321,6 +321,11 @@ a.sidebar-nav-item:focus {
     padding-left: 4rem;
     padding-right: 4rem;
     max-width: 37rem;  /* Smaller margins than Hyde/Poole */
+    /* Prevent horizontal scrolling due to large math tables */
+    /* in small width displays. */
+    overflow-x: auto;
+}
+
 }
 @media (max-width: 48em) {
   .content {
@@ -388,12 +393,15 @@ td {
   line-height: 0;
 }
 
-/* Math equations centering */
 p mjx-container {
+  /* Math equations centering. */
   display: block;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  /* Prevent horizontal scrolling due to large math tables */
+  /* in small width displays. */
+  overflow-x: scroll;
 }
 
 /* Math spacing in tables */
