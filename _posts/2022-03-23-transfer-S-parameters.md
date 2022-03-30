@@ -29,11 +29,7 @@ And, be careful, this is the inverse order as one expects. Yes, matrix multiplic
 
 The following formulas can be used to pass from regular to transfer S parameter:
 
-<div markdown="1" align="center">
-
-| &&T_(11) = S_(12) - (S_(11)S_(22))/(S_(21))&&  | &&S_(11) = T_(12)/T_(22)&&                    |
-| &&T_(12) = S_(11)/S_(21)&&                     | &&S_(21) = 1/T_(22)&&                         |
-| &&T_(21) = - S_(22)/S_(21)&&                   | &&S_(12) = T_(11) - (T_(12)T_(21))/(T_(22))&& |
-| &&T_(22) = 1/S_(21)&&                          | &&S_(22) = - T_(21)/T_(22)&&                  |
-
-</div>
+&&{: (  T_(11) = S_(12) - (S_(11)S_(22))/(S_(21))  ,  S_(11) = T_(12)/T_(22)                     ),
+     (  T_(12) = S_(11)/S_(21)                     ,  S_(21) = 1/T_(22)                          ),
+     (  T_(21) = - S_(22)/S_(21)                   ,  S_(12) = T_(11) - (T_(12)T_(21))/(T_(22))  ),
+     (  T_(22) = 1/S_(21)                          ,  S_(22) = - T_(21)/T_(22)                   ) :}&&

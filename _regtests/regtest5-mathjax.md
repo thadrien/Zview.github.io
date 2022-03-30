@@ -19,13 +19,9 @@ Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. 
 
 Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
 
-<div markdown="1" align="center">
-
-| &&T_(11) = S_(12) - (S_(11)S_(22))/(S_(21))&&  | &&S_(11) = T_(12)/T_(22)&&                    |
-| &&T_(12) = S_(11)/S_(21)&&                     | &&S_(21) = 1/T_(22)&&                         |
-| &&T_(21) = - S_(22)/S_(21)&&                   | &&S_(12) = T_(11) - (T_(12)T_(21))/(T_(22))&& |
-| &&T_(22) = 1/S_(21)&&                          | &&S_(22) = - T_(21)/T_(22)&&                  |
-
-</div>
+&&{: (  T_(11) = S_(12) - (S_(11)S_(22))/(S_(21))  ,  S_(11) = T_(12)/T_(22)                     ),
+     (  T_(12) = S_(11)/S_(21)                     ,  S_(21) = 1/T_(22)                          ),
+     (  T_(21) = - S_(22)/S_(21)                   ,  S_(12) = T_(11) - (T_(12)T_(21))/(T_(22))  ),
+     (  T_(22) = 1/S_(21)                          ,  S_(22) = - T_(21)/T_(22)                   ) :}&&
 
 Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius, ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus sapien eros vitae ligula.
