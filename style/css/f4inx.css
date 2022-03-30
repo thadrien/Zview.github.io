@@ -402,6 +402,8 @@ p mjx-container {
   /* Prevent horizontal scrolling due to large math tables */
   /* in small width displays. */
   overflow-x: scroll;
+  /* Prevents spurious vertical scrolling. */
+  overflow-y: clip;
 }
 
 /* Math spacing in tables */
