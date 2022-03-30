@@ -63,6 +63,8 @@ a {
   --links-color: darkblue;
   color: var(--links-color);
   text-decoration: none;
+  /* Prevent long urls to make horizontal scroll in small width displays. */
+  overflow-wrap: anywhere;
 }
 h1 a,
 h2 a,
