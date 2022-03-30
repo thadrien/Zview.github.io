@@ -5,7 +5,7 @@ sitemap: false
 ---
 
 <div class="posts">
-  {% for regtest in site.regtests %}
+  {% for regtest in site.regtests reversed %}
     <div class="post">
       <h1 class="post-title">
         <a href="{{ regtest.url | absolute_url }}">
