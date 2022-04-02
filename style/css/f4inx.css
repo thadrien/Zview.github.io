@@ -181,6 +181,19 @@ a.sidebar-nav-item:focus {
   font-weight: bold;
 }
 
+/* Space for last already taken into account in .sidebar */
+/* when sidebar is on top in mobile viewing.             */
+/*                                                       */
+/* :last-child doesn't work due to a .print-only element */
+/*                                                       */
+/* @media not currently useless because margin: 0 when   */
+/* printing but left in case this changes.               */
+@media not print {
+  .sidebar .last-not-print {
+    margin-bottom: 0;
+  }
+}
+
 /****************/
 /* Print layout */
 /****************/

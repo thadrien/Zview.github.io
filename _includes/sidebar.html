@@ -26,7 +26,7 @@
     {% endfor %}
   </nav>
 
-  <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. See <a href="{{ "/LICENCE.html" | relative_url }}">licence</a>. </p>
+  <p class="last-not-print">&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. See <a href="{{ "/LICENCE.html" | relative_url }}">licence</a>. </p>
 
   <a class="print-only" href="{{ site.author.url  | append: page.url }}">{{ site.author.url  | append: page.url }}</a>
 </div>
