@@ -406,7 +406,8 @@ td {
   line-height: 0;
 }
 
-p mjx-container {
+/* Custom tag containing MathJax AsciiMath defined in mathjax-asciimath.html. */
+asciimath {
   /* Math equations centering. */
   display: block;
   margin-left: auto;
