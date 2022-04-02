@@ -414,7 +414,7 @@ p mjx-container {
   text-align: center;
   /* Prevent horizontal scrolling due to large math tables */
   /* in small width displays. */
-  overflow-x: scroll;
+  overflow-x: auto;
   /* Prevents spurious vertical scrolling. */
   overflow-y: clip;
 }
