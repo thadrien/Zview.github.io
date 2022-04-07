@@ -420,6 +420,16 @@ latexmath {
   /* Prevents spurious vertical scrolling. */
   overflow-y: clip;
 }
+/* When inline, unset previous settings. */
+p > asciimath,
+p > latexmath {
+  display: unset;
+  margin-left: unset;
+  margin-right: unset;
+  text-align: unset;
+  overflow-x: unset;
+  overflow-y: unset;
+}
 
 /* Math spacing in tables */
 td mjx-container {
