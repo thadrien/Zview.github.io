@@ -23,4 +23,14 @@ Bloc math test 2:
      (  T_(22) = 1/S_(21)                          ,  S_(22) = - T_(21)/T_(22)                   ) :}
 </asciimath>
 
+LaTeX math test:
+
+<latexmath>
+  M = \begin{bmatrix}
+    1       & 2      & \dots  & 10     \\
+    2       & 3      & \dots  & 11     \\
+    \vdots  & \vdots & \ddots & \vdots \\
+    10      & 11     & \dots  & 19     \\
+  \end{bmatrix}
+</latexmath>
 End of math tests.

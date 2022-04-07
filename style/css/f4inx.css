@@ -407,7 +407,8 @@ td {
 }
 
 /* Custom tag containing MathJax AsciiMath defined in mathjax-asciimath.html. */
-asciimath {
+asciimath,
+latexmath {
   /* Math equations centering. */
   display: block;
   margin-left: auto;
