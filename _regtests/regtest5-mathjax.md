@@ -33,4 +33,5 @@ LaTeX math test:
     10      & 11     & \dots  & 19     \\
   \end{bmatrix}
 </latexmath>
+
 End of math tests.
