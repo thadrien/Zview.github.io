@@ -8,6 +8,8 @@ sitemap: false
 
 Inline math test: &&T = T_1 \ T_2 \ cdots \ T_N&&.
 
+Inline math with HTML tags, with asciimath: <asciimath>T = T_1 \ T_2 \ cdots \ T_N</asciimath>, and with latexmath: <latexmath>T = T_1 \ T_2 \ \cdots \ T_N</latexmath>.
+
 Block math test 1:
 
 <asciimath>
