@@ -470,6 +470,9 @@ a.reversefootnote {
   }
 }
 
+/**************/
+/* Pagination */
+/**************/
 /* Pagination items can be `span`s or `a`s */
 .pagination-item {
   padding-top: calc(0.5em - 5px);
@@ -487,20 +490,6 @@ a.reversefootnote {
   background: white;
   border: solid black 5px;
   text-decoration: none;
-}
-
-/**************/
-/* Pagination */
-/**************/
-@media (prefers-color-scheme: dark) {
-  body {
-    background: black;
-    color: white;
-  }
-  .sidebar {
-    border-right: 2px solid white;
-    border-bottom: 2px solid white;
-  }
 }
 
 /*************/
