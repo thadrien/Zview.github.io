@@ -21,6 +21,10 @@ body {
   --fg-color: #000000;
   background: var(--bg-color);
   color: var(--fg-color);
+  /* Vars for bars thickness, from thickest to thinnest. */
+  --bar-1: 3px;
+  --bar-2: 2px;
+  --bar-3: 1px;
 }
 body > * {
   flex: 1;
@@ -264,11 +268,11 @@ a.sidebar-nav-item:focus {
 /* Separation bar between posts */
 .post + .post {
   margin-top: 2em;
-  border-top: 2px solid;
+  border-top: var(--bar-2) solid;
 }
 .post:last-of-type {
   padding-bottom: 1em;  /* FIXME: better substraction. */
-  border-bottom: 2px solid;
+  border-bottom: var(--bar-2) solid;
 }
 
 /* Blog post or page title */
@@ -295,7 +299,7 @@ a.sidebar-nav-item:focus {
 .related {
   padding-top: 2rem;
   padding-bottom: 2rem;
-  border-top: 1px solid black;
+  border-top: var(--bar-3) solid black;
 }
 .related h2 {
   margin-top: 0;
@@ -425,8 +429,8 @@ figure.text-table table thead,
 figure.text-table table tbody,
 table.text-table thead,
 table.text-table tbody {
-  border-top: 1px solid var(--fg-color);
-  border-bottom: 1px solid var(--fg-color);
+  border-top: var(--bar-2) solid var(--fg-color);
+  border-bottom: var(--bar-2) solid var(--fg-color);
 }
 figure.text-table table tr,
 figure.text-table table td,
@@ -436,6 +440,12 @@ table.text-table td {
   padding-left: 1em;
   padding-right: 1em;
   line-height: unset;
+}
+figure.text-table table tbody tr,
+figure.text-table table tbody td,
+table.text-table tbody tr,
+table.text-table tbody td {
+  border-bottom: var(--bar-3) solid var(--fg-color);
 }
 figure.text-table figcaption {
   display: table-caption;
@@ -479,14 +489,14 @@ td mjx-container {
 /*************/
 
 .footnotes{
-  border-top: 1px solid black;
+  border-top: var(--bar-2) solid black;
 }
 /* 80% size only in main page post footnotes */
 .posts > .post > .footnotes{
   border-top: none;
 }
 .posts > .post > .footnotes:before {
-  border-top: 1px solid black;
+  border-top: var(--bar-2) solid black;
   content: " ";
   display: block;
   width: 80%;
@@ -550,13 +560,13 @@ a.reversefootnote {
     --fg-color: white;
   }
   .sidebar {
-    border-right: 2px solid white;
+    border-right: var(--bar-1) solid white;
     border-bottom: none;
   }
   @media (max-width: 48em) {
     .sidebar {
       border-right: none;
-      border-bottom: 2px solid white;
+      border-bottom: var(--bar-1) solid white;
     }
   }
   a {
