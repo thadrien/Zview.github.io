@@ -16,6 +16,11 @@ body {
   padding: 0;
   display: flex;
   flex-flow: row wrap;
+  /* Vars for background and foreground colors for easy global change. */
+  --bg-color: #ffffff;
+  --fg-color: #000000;
+  background: var(--bg-color);
+  color: var(--fg-color);
 }
 body > * {
   flex: 1;
@@ -420,8 +425,8 @@ figure.text-table table thead,
 figure.text-table table tbody,
 table.text-table thead,
 table.text-table tbody {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-top: 1px solid var(--fg-color);
+  border-bottom: 1px solid var(--fg-color);
 }
 figure.text-table table tr,
 figure.text-table table td,
@@ -541,8 +546,8 @@ a.reversefootnote {
 /*************/
 @media (prefers-color-scheme: dark) {
   body {
-    background: black;
-    color: white;
+    --bg-color: black;
+    --fg-color: white;
   }
   .sidebar {
     border-right: 2px solid white;
