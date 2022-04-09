@@ -401,9 +401,41 @@ p > img {
   margin-right: auto;
 }
 
-/* Tables */
-td {
+/* Tables for images formatting */
+table.images-table td {
   line-height: 0;
+}
+
+/* Text only tables and figures */
+figure.text-table {
+  margin-left: auto;
+  margin-right: auto;
+  display: table;  /* For caption. */
+}
+figure.text-table table,
+table.text-table {
+  border-collapse: collapse;
+}
+figure.text-table table thead,
+figure.text-table table tbody,
+table.text-table thead,
+table.text-table tbody {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+figure.text-table table tr,
+figure.text-table table td,
+table.text-table tr,
+table.text-table td {
+  border: none;
+  padding-left: 1em;
+  padding-right: 1em;
+  line-height: unset;
+}
+figure.text-table figcaption {
+  display: table-caption;
+  caption-side: top;
+  text-align: center;
 }
 
 /* Custom tag containing MathJax AsciiMath defined in mathjax-asciimath.html. */
