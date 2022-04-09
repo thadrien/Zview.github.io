@@ -6,7 +6,7 @@ sitemap: false
 ---
 {%- include mathjax-asciimath.html %}
 
-Inline math test: &&T = T_1 \ T_2 \ cdots \ T_N&&.
+Inline math test, with asciimath: && T = T_1 \ T_2 \ cdots \ T_N &&.
 
 Inline math with HTML tags, with asciimath: <asciimath>T = T_1 \ T_2 \ cdots \ T_N</asciimath>, and with latexmath: <latexmath>T = T_1 \ T_2 \ \cdots \ T_N</latexmath>.
 

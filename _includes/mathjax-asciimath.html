@@ -3,7 +3,7 @@
 MathJax = {
   loader: { load: ['input/asciimath', 'input/tex-full', 'output/chtml', 'ui/menu'] },
   asciimath: { delimiters: [['&&', '&&']] },
-  tex: { inlineMath: ['\\(', '\\)'] },
+  tex: { inlineMath: [] },  /* Incompatibility with asciimath. */
   /* See https://stackoverflow.com/questions/62089234/execute-mathjax-for-custom-tags-without-delimiters */
   options: {
     renderActions: {
