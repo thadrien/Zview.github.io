@@ -4,7 +4,6 @@ title:  Regtest MathJax
 date: 2022-03-22
 sitemap: false
 ---
-{%- include mathjax-asciimath.html %}
 
 Inline math test, with asciimath: && T = T_1 \ T_2 \ cdots \ T_N &&.
 
