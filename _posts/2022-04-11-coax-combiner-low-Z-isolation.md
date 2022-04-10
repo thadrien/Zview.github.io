@@ -32,7 +32,7 @@ We will show in this section that the lack of isolation of power combiners witho
 Fig.&#8239;1. <!--~\ref{fig:sch:general-even-odd}--> shows the even and odd mode excitations of a power combiner without isolation mechanism. In the even mode, the power of the inputs goes to the output. If the impedance matching is correct, no output is reflected to the inputs and they don't see each other. However, in symmetrical odd modes, due to symmetry, the output is connected to a virtual ground. The input waves are totally reflected. This reflection is the cause of the lack of isolation between the inputs. To provide isolation between the inputs, we need to find a way to absorb this reflection. Similar analysis is done in \[[^yau1986new]\]  and \[[^nagai1977nway]\] for combiners using several discrete resistors.
 
 <figure>
-  <img src="{{ '/posts/coax-combiner-low-Z-isolation/general-even-odd-v3.svg' | relative_url }}" title="General even and odd mode excitations of a power combiner.">
+  <img class="dark-mode-invert" src="{{ '/posts/coax-combiner-low-Z-isolation/general-even-odd-v3.svg' | relative_url }}" title="General even and odd mode excitations of a power combiner.">
   <figcaption>Fig.&#8239;1. General even and odd mode excitations of a power combiner.</figcaption>
 </figure>
 
@@ -269,7 +269,7 @@ by numerical integration. Fig.&#8239;8. <!-- ~\ref{fig-Klopfenstein} --> shows t
 8) The number of points is reduced from 2001 to fewer than 20 points using an iterative end-point fit algorithm. This simple step is very important. Without this step, the mesher would not be able to mesh the structure for numerical simulation. This also helps manufacturing a lot.
 
 <figure>
-  <img src="{{ '/posts/coax-combiner-low-Z-isolation/Klopfenstein.svg' | relative_url }}" style="width:100%;" title="Impedance Z0, effective dielectric constant Keff, and profiles of both impedance preadaptation and coaxial sections. They make a single Klopfenstein transition." alt="Impedance Z0, effective dielectric constant Keff, and profiles of both impedance preadaptation and coaxial sections. They make a single Klopfenstein transition.">
+  <img class="dark-mode-invert" src="{{ '/posts/coax-combiner-low-Z-isolation/Klopfenstein.svg' | relative_url }}" style="width:100%;" title="Impedance Z0, effective dielectric constant Keff, and profiles of both impedance preadaptation and coaxial sections. They make a single Klopfenstein transition." alt="Impedance Z0, effective dielectric constant Keff, and profiles of both impedance preadaptation and coaxial sections. They make a single Klopfenstein transition.">
   <figcaption>Fig.&#8239;8. Impedance Z<sub>0</sub>, effective dielectric constant K<sub>eff</sub>, and profiles of both impedance preadaptation and coaxial sections. They make a single Klopfenstein transition.</figcaption>
 </figure>
 <!-- \label{fig-Klopfensteinr} -->
@@ -309,7 +309,7 @@ The transitions from the 50&#8239;Ω SMA coaxial connectors to the 2.5&#8239;Ω 
 Measurement results after desembedding and impedance renormalization are shown in Fig.&#8239;11, <!--\ref{fig-transmission}--> Fig.&#8239;11, <!--\ref{fig-transmission-detail}--> Fig.&#8239;12, <!--~\ref{fig-phase}--> and Fig.&#8239;13, <!--\ref{fig-isolation}--> along with the simulation results. Combining losses (Fig.&#8239;11) <!--\ref{fig-transmission}--> are lower than 1.8&#8239;dB on a 1&#8239;--&#8239;6&#8239;GHz band, except a few peaks. These peaks are due to mechanical tolerances in the start of the combining section, where minimal distance between parts is only 0.8&#8239;mm, and can be removed by a redesign of this combiner, by increasing this small dimension. This figure is good because it includes the impedance preadaptation from 2.5&#8239;Ω. RMS phase error of the inputs (Fig.&#8239;12) <!--\ref{fig-phase}--> is lower than 15° on the full band. These two parameters, insertion loss and RMS phase error, are very promising for power combining.
 
 <figure>
-  <img src="{{ '/posts/coax-combiner-low-Z-isolation/transmission.svg' | relative_url }}" title="Insertion losses and output matching of power combiner." alt="Insertion losses and output matching of power combiner.">
+  <img class="dark-mode-invert" src="{{ '/posts/coax-combiner-low-Z-isolation/transmission.svg' | relative_url }}" title="Insertion losses and output matching of power combiner." alt="Insertion losses and output matching of power combiner.">
   <figcaption>Fig.&#8239;11. Insertion losses and output matching of power combiner.</figcaption>
 </figure>
 <!-- fig-transmission -->
@@ -353,19 +353,19 @@ The worst case isolation between inputs is at least 10&#8239;dB for inputs close
       </tbody>
     </table>
   -->
-  <img src="{{ '/posts/coax-combiner-low-Z-isolation/transmission-detail-plot.svg' | relative_url }}" title="Details of inputs transmissions." alt="Details of inputs transmissions.">
+  <img class="dark-mode-invert" src="{{ '/posts/coax-combiner-low-Z-isolation/transmission-detail-plot.svg' | relative_url }}" title="Details of inputs transmissions." alt="Details of inputs transmissions.">
   <figcaption>Fig.&#8239;12. Details of inputs transmissions.</figcaption>
 </figure>
 <!-- \label{fig-transmission-detail} -->
 
 <figure>
-  <img src="{{ '/posts/coax-combiner-low-Z-isolation/phase-details.svg' | relative_url }}" title="Inputs phase errors and RMS phase error." alt="Inputs phase errors and RMS phase error.">
+  <img class="dark-mode-invert" class="dark-mode-invert" src="{{ '/posts/coax-combiner-low-Z-isolation/phase-details.svg' | relative_url }}" title="Inputs phase errors and RMS phase error." alt="Inputs phase errors and RMS phase error.">
   <figcaption>Fig.&#8239;13. Inputs phase errors and RMS phase error.</figcaption>
 </figure>
 <!-- \label{fig-phase-details} -->
 
 <figure>
-  <img src="{{ '/posts/coax-combiner-low-Z-isolation/isolation.svg' | relative_url }}" title="Measured and simulated isolations." alt="Measured and simulated isolations.">
+  <img class="dark-mode-invert" src="{{ '/posts/coax-combiner-low-Z-isolation/isolation.svg' | relative_url }}" title="Measured and simulated isolations." alt="Measured and simulated isolations.">
   <figcaption>Fig.&#8239;14. Measured and simulated isolations.</figcaption>
 </figure>
 <!-- \label{fig-isolation} -->
