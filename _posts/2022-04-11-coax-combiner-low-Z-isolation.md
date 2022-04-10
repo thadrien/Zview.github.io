@@ -207,7 +207,17 @@ In contrast, in the odd modes, as shown in Fig.&#8239;5b<!--\ref{fig-plt-mode-2}
 In the odd modes, due to symmetry, point B behaves like a virtual ground. The heat spreader can be removed from the odd modes' equivalent schematic because it is connected to the virtual ground. Without the absorber, the odd mode would be reflected towards the inputs. This reflection would cause a lack of isolation. With the absorber, the reflection of the odd modes is strongly attenuated, which increases isolation between the inputs. This absorber has the same function as the resistor in Wilkinson combiners[^microwaves101wilkinson]<sup>,</sup>[^cohn1968broadband]<sup>,</sup>[^wilkinson1960divider]<sup>,</sup>[^yau1986new], but its distributed operation provides higher bandwidths.
 
 <figure>
-  <img src="{{ '/posts/coax-combiner-low-Z-isolation/combiner-even-odd-v12-with-png-web.svg' | relative_url }}"  style="width:100%;" title="Equivalent schematic of the power combiner in the even mode and in the odd modes." alt="Equivalent schematic of the power combiner in the even mode and in the odd modes.">
+  <picture>
+    <source
+      srcset="{{ '/posts/coax-combiner-low-Z-isolation/combiner-even-odd-v12-with-png-web-dark.svg' | relative_url }}"
+      media="(prefers-color-scheme: dark)">
+    <img
+      class="dark-mode-no-bg"
+      src="{{ '/posts/coax-combiner-low-Z-isolation/combiner-even-odd-v12-with-png-web.svg' | relative_url }}"
+      style="width:100%;"
+      title="Equivalent schematic of the power combiner in the even mode and in the odd modes."
+      alt="Equivalent schematic of the power combiner in the even mode and in the odd modes.">
+  </picture>
   <figcaption>Fig.&#8239;6. Equivalent schematic of the power combiner in the even mode and in the odd modes.</figcaption>
 </figure>
 <!-- \label{fig-sch-even-odd-combiner} -->
@@ -215,7 +225,16 @@ In the odd modes, due to symmetry, point B behaves like a virtual ground. The he
 ## IV. Impedance prematch {#sec-impedance-preadaptation}
 
 <figure>
-  <img src="{{ '/posts/coax-combiner-low-Z-isolation/preadaptation-2D-3D-v3-web.svg' | relative_url }}" style="width:100%;" title="Section of the impedance prematch structure (not to scale) and 3D view." alt="Section of the impedance prematch structure (not to scale) and 3D view.">
+  <picture>
+    <source
+      srcset="{{ '/posts/coax-combiner-low-Z-isolation/preadaptation-2D-3D-v3-web-dark.svg' | relative_url }}"
+      media="(prefers-color-scheme: dark)">
+    <img
+      class="dark-mode-no-bg"
+      src="{{ '/posts/coax-combiner-low-Z-isolation/preadaptation-2D-3D-v3-web.svg' | relative_url }}" style="width:100%;"
+      title="Section of the impedance prematch structure (not to scale) and 3D view."
+      alt="Section of the impedance prematch structure (not to scale) and 3D view.">
+  </picture>
   <figcaption>Fig.&#8239;7. Section of the impedance prematch structure (not to scale) and 3D view.</figcaption>
 </figure>
 <!-- \label{fig-preadaptation-2D} -->
