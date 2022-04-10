@@ -113,7 +113,7 @@ At the exit of the combining section, there is one transition between air and PE
 A CAD of the combiner with the power amplifier modules is shown in Fig.&#8239;4. <!-- ~\ref{fig-power-combiner-CAD-with-modules} --> A dummy circuit is shown in the figure to make mechanical CAD easier. Special care was taken with the cooling of the modules because the average lifespan of a GaN transistor is divided by 2 for each 6~°C increase in temperature. Unlike Spatium<sup>&reg;</sup> power combiners[^jia2003broadband]<sup>,</sup>[^jia2003broadband2], where the power amplifiers MMICs are trapped inside the structure, the transistors are mounted on the outer part and thus can be more easily cooled. The overall structure is contained in a 333&times;322&times;286&times;mm<sup>3</sup> volume.
 
 <figure>
-  <img src="{{ '/posts/coax-combiner-low-Z-isolation/CAD-with-modules.png' | relative_url }}" style="width:50%;" title="CAD of the combiner with power amplifier modules. Special care is given to the air cooling.">
+  <img class="dark-mode-no-bg" src="{{ '/posts/coax-combiner-low-Z-isolation/CAD-with-modules-transparent.png' | relative_url }}" style="width:50%;" title="CAD of the combiner with power amplifier modules. Special care is given to the air cooling.">
   <figcaption>Fig.&#8239;4. CAD of the combiner with power amplifier modules. Special care is given to the air cooling.</figcaption>
 </figure>
 
