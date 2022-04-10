@@ -572,7 +572,13 @@ a.reversefootnote {
   a {
   --links-color: aqua;
   }
+  /* Default white background on transparent images. */
+  .post img:not(.dark-mode-no-bg) {
+    background: #ffffff;
+  }
+  /* When ready for dark mode, apply dark mode settings. */
   .dark-mode-invert {
+    background: unset;
     filter: invert();
   }
 }
