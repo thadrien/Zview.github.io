@@ -10,7 +10,7 @@ last_modified_at: 2022-03-23 13:30
 {% comment %}
 Manually included to set size, class and alt. Zoomed for better rendering.
 {% endcomment %}
-<img class="schematic" src="{{ '/posts/transfer-S-parameters/S-parameters.svg' | relative_url }}" alt="S-parameters matrix of generalized two-port network with characteristic impedance Z0" style="min-width:50%;">
+<img class="dark-mode-invert" src="{{ '/posts/transfer-S-parameters/S-parameters.svg' | relative_url }}" alt="S-parameters matrix of generalized two-port network with characteristic impedance Z0" style="min-width:50%;">
 
 Transfer S parameters are a convenient way to express S parameters in a way that allows to easily cascade blocks. They have the same principle as ABCD parameters: they express all relevant input quantities in function of all relevant output quantities, contrary to normal S parameters which express all scattered waves in function of all incident waves, and are messy when cascading blocks. They are sometimes more convenient than ABCD parameters, because they work with wave quantities instead of voltages and current, which are very difficult to measure at high frequencies.
 
