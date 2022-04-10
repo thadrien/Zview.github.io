@@ -301,7 +301,7 @@ The transitions from the 50&#8239;Ω SMA coaxial connectors to the 2.5&#8239;Ω 
 <!-- TODO: add comments. -->
 
 <figure>
-  <img src="{{ '/posts/coax-combiner-low-Z-isolation/input-transition.png' | relative_url }}" style="width:50%;" title="3D EM model of the input transition from standard 50 Ω SMA connector to 2.5 Ω wide microstrip line." alt="3D EM model of the input transition from standard 50 Ω SMA connector to 2.5 Ω wide microstrip line.">
+  <img class="dark-mode-no-bg" src="{{ '/posts/coax-combiner-low-Z-isolation/input-transition-transparent.png' | relative_url }}" style="width:50%;" title="3D EM model of the input transition from standard 50 Ω SMA connector to 2.5 Ω wide microstrip line." alt="3D EM model of the input transition from standard 50 Ω SMA connector to 2.5 Ω wide microstrip line.">
   <figcaption>Fig.&#8239;10. 3D EM model of the input transition from standard 50&#8239;Ω SMA connector to 2.5&#8239;Ω wide microstrip line.</figcaption>
 </figure>
 <!-- \label{fig-measurement-setup-2} -->
