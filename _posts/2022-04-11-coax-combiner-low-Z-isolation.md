@@ -181,15 +181,15 @@ The prematching section behaves in exactly the same way in the even and the odd 
     <tbody>
       <tr>
         <td>
-          <img src="{{ '/posts/coax-combiner-low-Z-isolation/even-odd-modes-mode-1-field.png' | relative_url }}" title="Even mode." alt="Even mode.">
+          <img class="dark-mode-no-bg" src="{{ '/posts/coax-combiner-low-Z-isolation/even-odd-modes-mode-1-field-transparent.png' | relative_url }}" title="Even mode." alt="Even mode.">
         </td>
         <td>
-          <img src="{{ '/posts/coax-combiner-low-Z-isolation/even-odd-modes-mode-2-field.png' | relative_url }}" title="Odd mode 1." alt="Odd mode 1.">
+          <img class="dark-mode-no-bg" src="{{ '/posts/coax-combiner-low-Z-isolation/even-odd-modes-mode-2-field-transparent.png' | relative_url }}" title="Odd mode 1." alt="Odd mode 1.">
         </td>
       </tr>
       <tr>
         <td>
-          <img src="{{ '/posts/coax-combiner-low-Z-isolation/even-odd-modes-mode-3-field.png' | relative_url }}" title="Odd mode 2." alt="Odd mode 2.">
+          <img class="dark-mode-no-bg" src="{{ '/posts/coax-combiner-low-Z-isolation/even-odd-modes-mode-3-field-transparent.png' | relative_url }}" title="Odd mode 2." alt="Odd mode 2.">
         </td>
         <td>
           <img src="{{ '/posts/coax-combiner-low-Z-isolation/even-odd-modes-scale-colors.svg' | relative_url }}" style="height:200px;" title="Color scale." alt="Color scale.">
