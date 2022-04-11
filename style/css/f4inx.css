@@ -492,14 +492,14 @@ td mjx-container {
 /*************/
 
 .footnotes{
-  border-top: var(--bar-2) solid black;
+  border-top: var(--bar-2) solid var(--fg-color);
 }
 /* 80% size only in main page post footnotes */
 .posts > .post > .footnotes{
   border-top: none;
 }
 .posts > .post > .footnotes:before {
-  border-top: var(--bar-2) solid black;
+  border-top: var(--bar-2) solid var(--fg-color);
   content: " ";
   display: block;
   width: 80%;
