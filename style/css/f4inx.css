@@ -299,7 +299,7 @@ a.sidebar-nav-item:focus {
 .related {
   padding-top: 2rem;
   padding-bottom: 2rem;
-  border-top: var(--bar-3) solid black;
+  border-top: var(--bar-2) solid black;
 }
 .related h2 {
   margin-top: 0;
