@@ -4,24 +4,35 @@ title:  Regtest MathJax
 date: 2022-03-22
 sitemap: false
 ---
-{%- include mathjax-asciimath.html %}
 
-<p class="begin-note">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. (<a href="https://en.wikipedia.org/wiki/Lorem_ipsum">https://en.wikipedia.org/wiki/Lorem_ipsum</a>) Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
-</p>
+Inline math test, with asciimath: && T = T_1 \ T_2 \ cdots \ T_N &&.
 
-Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.
+Inline math with HTML tags, with asciimath: <asciimath>T = T_1 \ T_2 \ cdots \ T_N</asciimath>, and with latexmath: <latexmath>T = T_1 \ T_2 \ \cdots \ T_N</latexmath>.
 
-&&[[b_1],[a_1]] = T \ [[a_2],[b_2]]&&
-Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim.
+Block math test 1:
 
-&&T = T_1 \ T_2 \ cdots \ T_N&&
+<asciimath>
+  [[b_1],[a_1]] = T \ [[a_2],[b_2]]
+</asciimath>
 
-Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
+Bloc math test 2:
 
-&&{: (  T_(11) = S_(12) - (S_(11)S_(22))/(S_(21))  ,  S_(11) = T_(12)/T_(22)                     ),
+<asciimath>
+  {: (  T_(11) = S_(12) - (S_(11)S_(22))/(S_(21))  ,  S_(11) = T_(12)/T_(22)                     ),
      (  T_(12) = S_(11)/S_(21)                     ,  S_(21) = 1/T_(22)                          ),
      (  T_(21) = - S_(22)/S_(21)                   ,  S_(12) = T_(11) - (T_(12)T_(21))/(T_(22))  ),
-     (  T_(22) = 1/S_(21)                          ,  S_(22) = - T_(21)/T_(22)                   ) :}&&
+     (  T_(22) = 1/S_(21)                          ,  S_(22) = - T_(21)/T_(22)                   ) :}
+</asciimath>
 
-Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius, ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus sapien eros vitae ligula.
+LaTeX math test:
+
+<latexmath>
+  M = \begin{bmatrix}
+    1       & 2      & \dots  & 10     \\
+    2       & 3      & \dots  & 11     \\
+    \vdots  & \vdots & \ddots & \vdots \\
+    10      & 11     & \dots  & 19     \\
+  \end{bmatrix}
+</latexmath>
+
+End of math tests.

@@ -16,6 +16,15 @@ body {
   padding: 0;
   display: flex;
   flex-flow: row wrap;
+  /* Vars for background and foreground colors for easy global change. */
+  --bg-color: #ffffff;
+  --fg-color: #000000;
+  background: var(--bg-color);
+  color: var(--fg-color);
+  /* Vars for bars thickness, from thickest to thinnest. */
+  --bar-1: 3px;
+  --bar-2: 2px;
+  --bar-3: 1px;
 }
 body > * {
   flex: 1;
@@ -122,8 +131,11 @@ h4, h5, h6 {
 
 .sidebar {
   padding: 2rem 2rem;
-  color: rgba(255, 255, 255, 1);
-  background-color: #000000;
+  /* Vars for background and foreground colors for easy global change. */
+  --bg-color: #000000;
+  --fg-color: #ffffff;
+  background: var(--bg-color);
+  color: var(--fg-color);
 }
 
 /* Sidebar logo */
@@ -259,11 +271,11 @@ a.sidebar-nav-item:focus {
 /* Separation bar between posts */
 .post + .post {
   margin-top: 2em;
-  border-top: 2px solid;
+  border-top: var(--bar-2) solid;
 }
 .post:last-of-type {
   padding-bottom: 1em;  /* FIXME: better substraction. */
-  border-bottom: 2px solid;
+  border-bottom: var(--bar-2) solid;
 }
 
 /* Blog post or page title */
@@ -290,7 +302,7 @@ a.sidebar-nav-item:focus {
 .related {
   padding-top: 2rem;
   padding-bottom: 2rem;
-  border-top: 1px solid black;
+  border-top: var(--bar-2) solid black;
 }
 .related h2 {
   margin-top: 0;
@@ -401,12 +413,52 @@ p > img {
   margin-right: auto;
 }
 
-/* Tables */
-td {
+/* Tables for images formatting */
+table.images-table td {
   line-height: 0;
 }
 
-p mjx-container {
+/* Text only tables and figures */
+figure.text-table {
+  margin-left: auto;
+  margin-right: auto;
+  display: table;  /* For caption. */
+}
+figure.text-table table,
+table.text-table {
+  border-collapse: collapse;
+}
+figure.text-table table thead,
+figure.text-table table tbody,
+table.text-table thead,
+table.text-table tbody {
+  border-top: var(--bar-2) solid var(--fg-color);
+  border-bottom: var(--bar-2) solid var(--fg-color);
+}
+figure.text-table table tr,
+figure.text-table table td,
+table.text-table tr,
+table.text-table td {
+  border: none;
+  padding-left: 1em;
+  padding-right: 1em;
+  line-height: unset;
+}
+figure.text-table table tbody tr,
+figure.text-table table tbody td,
+table.text-table tbody tr,
+table.text-table tbody td {
+  border-bottom: var(--bar-3) solid var(--fg-color);
+}
+figure.text-table figcaption {
+  display: table-caption;
+  caption-side: top;
+  text-align: center;
+}
+
+/* Custom tag containing MathJax AsciiMath defined in mathjax-asciimath.html. */
+asciimath,
+latexmath {
   /* Math equations centering. */
   display: block;
   margin-left: auto;
@@ -417,6 +469,16 @@ p mjx-container {
   overflow-x: auto;
   /* Prevents spurious vertical scrolling. */
   overflow-y: clip;
+}
+/* When inline, unset previous settings. */
+p > asciimath,
+p > latexmath {
+  display: unset;
+  margin-left: unset;
+  margin-right: unset;
+  text-align: unset;
+  overflow-x: unset;
+  overflow-y: unset;
 }
 
 /* Math spacing in tables */
@@ -430,14 +492,14 @@ td mjx-container {
 /*************/
 
 .footnotes{
-  border-top: 1px solid black;
+  border-top: var(--bar-2) solid var(--fg-color);
 }
 /* 80% size only in main page post footnotes */
 .posts > .post > .footnotes{
   border-top: none;
 }
 .posts > .post > .footnotes:before {
-  border-top: 1px solid black;
+  border-top: var(--bar-2) solid var(--fg-color);
   content: " ";
   display: block;
   width: 80%;
@@ -481,14 +543,14 @@ a.reversefootnote {
   padding-right: calc(2em - 5px);
   border: solid black 5px;  /* To make both buttons equal width. */
   border-radius: 999px;
-  color: white;
-  background: black;
+  color: var(--bg-color);
+  background: var(--fg-color);
 }
 .pagination-item:hover,
 .pagination-item.hover-test {
-  color: black;
-  background: white;
-  border: solid black 5px;
+  color: var(--fg-color);
+  background: var(--bg-color);
+  border: solid var(--fg-color) 5px;
   text-decoration: none;
 }
 
@@ -497,23 +559,71 @@ a.reversefootnote {
 /*************/
 @media (prefers-color-scheme: dark) {
   body {
-    background: black;
-    color: white;
+    --bg-color: black;
+    --fg-color: white;
   }
   .sidebar {
-    border-right: 2px solid white;
+    border-right: var(--bar-1) solid white;
     border-bottom: none;
   }
   @media (max-width: 48em) {
     .sidebar {
       border-right: none;
-      border-bottom: 2px solid white;
+      border-bottom: var(--bar-1) solid white;
     }
   }
   a {
   --links-color: aqua;
   }
-  .schematic {
+  /* Default white background on transparent images. */
+  .post img:not(.dark-mode-no-bg) {
+    background: #ffffff;
+  }
+  /* When ready for dark mode, apply dark mode settings. */
+  .dark-mode-invert {
+    background: unset;
     filter: invert();
   }
+  /* Buttons have reversed shape in dark mode. */
+  .pagination-item {
+    color: var(--fg-color);
+    background: var(--bg-color);
+    border: solid var(--fg-color) 5px;
+    text-decoration: none;
+  }
+  .pagination-item:hover,
+  .pagination-item.hover-test {
+    padding-top: calc(0.5em - 5px);
+    padding-bottom: calc(0.5em - 5px);
+    padding-left: calc(2em - 5px);
+    padding-right: calc(2em - 5px);
+    border: solid black 5px;  /* To make both buttons equal width. */
+    border-radius: 999px;
+    color: var(--bg-color);
+    background: var(--fg-color);
+  }
+}
+
+/************/
+/* Articles */
+/************/
+.footnotes li cite {
+  margin-left: inherit;
+  margin-right: inherit;
+}
+.footnotes li .article-title {
+  font-style: italic;
+}
+.footnotes li .article-journal {
+}
+.footnotes li time {
+}
+
+figure img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+figure figcaption {
+  font-style: italic;
 }

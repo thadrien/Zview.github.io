@@ -18,7 +18,7 @@ The following pictures produced with OpenEMS shows clearly this effect:
 {% comment %}
 Manually included to set alt texts.
 {% endcomment %}
-<table>
+<table class="images-table">
 <tr>
 <td>
 <img src="{{ '/posts/nfc-coils-should-not-be-grounded/loop_v2_H_mid.png' | relative_url }}" title="Simulation of magnetic field, grounded coil, between ground plane and coil.">
