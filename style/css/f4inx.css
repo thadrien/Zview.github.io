@@ -131,8 +131,11 @@ h4, h5, h6 {
 
 .sidebar {
   padding: 2rem 2rem;
-  color: rgba(255, 255, 255, 1);
-  background-color: #000000;
+  /* Vars for background and foreground colors for easy global change. */
+  --bg-color: #000000;
+  --fg-color: #ffffff;
+  background: var(--bg-color);
+  color: var(--fg-color);
 }
 
 /* Sidebar logo */
