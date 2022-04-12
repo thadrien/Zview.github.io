@@ -198,6 +198,7 @@ a.sidebar-nav-item:focus {
   margin-top: inherit;
   margin-bottom: inherit;
   font-size: inherit;
+  font-weight: unset;
   line-height: inherit;
 }
 .sidebar ul {
