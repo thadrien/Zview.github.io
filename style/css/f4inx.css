@@ -178,18 +178,15 @@ h4, h5, h6 {
 }
 
 /* Sidebar nav */
-/* .sidebar-nav {
-  margin-bottom: 1rem;
-} */
-.sidebar-nav-item {
+.sidebar nav * {
   display: block;
   line-height: 1.75;
 }
-a.sidebar-nav-item:hover,
-a.sidebar-nav-item:focus {
+.sidebar nav a:hover,
+.sidebar nav a:focus {
   text-decoration: underline;
 }
-.sidebar-nav-item.active {
+.sidebar nav .active {
   font-weight: bold;
 }
 
