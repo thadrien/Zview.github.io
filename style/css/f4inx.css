@@ -180,7 +180,6 @@ h4, h5, h6 {
 /* Sidebar nav */
 .sidebar nav * {
   display: block;
-  line-height: 1.75;
 }
 .sidebar nav a:hover,
 .sidebar nav a:focus {
@@ -191,22 +190,21 @@ h4, h5, h6 {
 }
 
 /* Sidebar recent posts*/
-.sidebar h2 {
-  margin-top: inherit;
-  margin-bottom: inherit;
-  font-size: inherit;
-  font-weight: unset;
-  line-height: inherit;
+/* First level only */
+.sidebar nav > ul {
+  padding-left: 0;
 }
-.sidebar ul {
-  margin-top: inherit;
-  margin-bottom: inherit;
-  padding-left: 1em;
-  list-style: none;
+.sidebar nav > ul > li {
+  font-size: 1.25rem;
 }
-.sidebar li {
-  /* Hanging keyword experimental. */
-  text-indent: -1em;
+/* Second level only */
+.sidebar nav > ul > li > ul {
+  padding-left: 1rem;
+}
+.sidebar nav > ul > li > ul > li {
+  font-size: 1rem;
+  line-height: normal;
+  margin-bottom: 0.5rem;
 }
 
 /* Space for last already taken into account in .sidebar */
