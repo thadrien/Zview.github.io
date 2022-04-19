@@ -178,19 +178,33 @@ h4, h5, h6 {
 }
 
 /* Sidebar nav */
-/* .sidebar-nav {
-  margin-bottom: 1rem;
-} */
-.sidebar-nav-item {
+.sidebar nav * {
   display: block;
-  line-height: 1.75;
 }
-a.sidebar-nav-item:hover,
-a.sidebar-nav-item:focus {
+.sidebar nav a:hover,
+.sidebar nav a:focus {
   text-decoration: underline;
 }
-.sidebar-nav-item.active {
+.sidebar nav .active {
   font-weight: bold;
+}
+
+/* Sidebar recent posts*/
+/* First level only */
+.sidebar nav > ul {
+  padding-left: 0;
+}
+.sidebar nav > ul > li {
+  font-size: 1.25rem;
+}
+/* Second level only */
+.sidebar nav > ul > li > ul {
+  padding-left: 1rem;
+}
+.sidebar nav > ul > li > ul > li {
+  font-size: 1rem;
+  line-height: normal;
+  margin-bottom: 0.5rem;
 }
 
 /* Space for last already taken into account in .sidebar */

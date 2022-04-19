@@ -9,21 +9,40 @@
     <p class="lead">{{ site.description }}</p>
   </div>
 
-  <nav class="sidebar-nav">
-    <a class="sidebar-nav-item{% if page.title == "Home" %} active{% endif %}" href="{{ "/" | relative_url }}">Home</a>
+  <nav>
+    <ul>
+      <li>
+        <a class="{% if page.title == "Home" %}active{% endif %}" href="{{ "/" | relative_url }}">Home</a>
+      </li>
 
-    {% comment %}
-      The code below dynamically generates a sidebar nav of pages with
-      `layout: page` in the front-matter. See readme for usage.
-    {% endcomment %}
+      <li>
+        Posts
+        <ul>
+          {% for post in site.posts %}
+            <li>
+              <a class="{% if page.url == post.url %}active{% endif %}" href="{{ post.url }}">
+                {{ post.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
 
-    {% for node in site.pages | sort:"order" %}
-      {% if node.title != null %}
-        {% if node.layout == "page" %}
-          <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
-        {% endif %}
-      {% endif %}
-    {% endfor %}
+      <li>
+        Misc pages
+        <ul>
+          {% for node in site.pages | sort:"order" %}
+            {% if node.title != null %}
+              {% if node.layout == "page" %}
+                <li>
+                  <a class="{% if page.url == node.url %}active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
+                </li>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </li>
+    </ul>
   </nav>
 
   <p class="last-not-print">&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. See <a href="{{ "/LICENCE.html" | relative_url }}">licence</a>. </p>
