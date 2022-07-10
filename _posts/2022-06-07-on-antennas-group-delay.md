@@ -14,7 +14,7 @@ Recently on LinkedIn, a fellow colleague asked whether the group delay of an ant
 A reasonable asumption when dealing with an antenna is that there will be an other antenna facing it. The transmission coefficient S21 between the two antennas can be written as follows, using the Friis transmission equation [https://en.wikipedia.org/wiki/Friis_transmission_equation](https://en.wikipedia.org/wiki/Friis_transmission_equation) :
 
 <asciimath>
-S_{21} = ubrace{G_a \cdot G_b}_{"Gains."} \cdot ubrace{\lambda / {4 \cdot \pi}}_{:("Terms you"),("always forget."):} \cdot ubrace{1 / d}_{:("Free space"),("attenuation."):} \cdot ubrace{e^{-j \cdot 2 \cdot \pi \cdot d / \lambda}}_{:("Distance"),("phase shift."):}
+S_{21} = ubrace{G_a \cdot G_b}_{"Gains."} \cdot \lambda / {4 \cdot \pi} \cdot ubrace{1 / d}_{:("Free space"),("attenuation."):} \cdot ubrace{e^{-j \cdot 2 \cdot \pi \cdot d / \lambda}}_{:("Distance"),("phase shift."):}
 </asciimath>
 
 Note this form is slightly different from the usual one, since the amplitude is taken instead of the power. Rearranging in function of the frequency gives:
@@ -23,7 +23,7 @@ Note this form is slightly different from the usual one, since the amplitude is 
 S_{21} = G_a \cdot G_b \cdot {c} / {4 \cdot \pi \cdot f} \cdot 1 / d \cdot e^{-j \cdot 2 \cdot \pi \cdot d / c \cdot f}
 </asciimath>
 
-For the group delay, only phase matters[^1], hence:
+For the group delay, only phase matters, hence:
 
 <asciimath>
 "phase"(S_{21}) = "phase"(G_a) + "phase"(G_b) - 2 \cdot \pi \cdot d / c \cdot f
@@ -33,7 +33,7 @@ Group delay is calculated using the derivative of the phase by <asciimath> \tau_
 
 ## Phase center of antennas
 
-A non-trivial varying term is the distance between the antennas. Antennas are often big enough compared to the wavelength to forbid the use of a random point to calculate the phase shift from the distance. The right point to take is the phase center, which is the center of the spherical wavefronts at infinity. The phase center depends on the direction, but most importantly for group delay calculations, it depends on frequency[^2].
+A non-trivial varying term is the distance between the antennas. Antennas are often big enough compared to the wavelength to forbid the use of a random point to calculate the phase shift from the distance. The right point to take is the phase center, which is the center of the spherical wavefronts at infinity. The phase center depends on the direction, but most importantly for group delay calculations, it depends on frequency[^1].
 
 The group delay formula can be rewritten taking this into account:
 
@@ -61,6 +61,4 @@ This last equation shows that not only the phase of the gain must be taken into 
 
 The group delay of an antenna can be calculated using simulation results, but the total phase shift change must be taken into account, including the move of the phase center.
 
-[^1]: The useless terms to screw up your student exams just disappeared, so you were right to forgot them.
-
-[^2]: Even antennas with a symmetry plane like the ideal dipole can have a varying phase center for directions outside of their symmetry plane.
+[^1]: Even antennas with a symmetry plane like the ideal dipole can have a varying phase center for directions outside of their symmetry plane.
