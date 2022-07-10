@@ -35,8 +35,6 @@ Group delay is calculated using the derivative of the phase by <asciimath> \tau_
 
 A non-trivial varying term is the distance between the antennas. Antennas are often big enough compared to the wavelength to forbid the use of a random point to calculate the phase shift from the distance. The right point to take is the phase center, which is the center of the spherical wavefronts at infinity. The phase center depends on the direction, but most importantly for group delay calculations, it depends on frequency[^2].
 
-**An important consideration is that since the group delay is a derivative, even a phase center which moves of only a small amount can have an huge impact on group delay if the move with frequency is fast.**
-
 The group delay formula can be rewritten taking this into account:
 
 <asciimath>
