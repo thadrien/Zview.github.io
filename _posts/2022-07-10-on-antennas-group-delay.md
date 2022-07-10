@@ -2,7 +2,7 @@
 layout: post
 title: On group delay of antennas.
 permalink: /posts/on-antennas-group-delay.html
-last_modified_at: 2022-06-07 21-11
+last_modified_at: 2022-07-10 16-54
 ---
 
 <p class="note">Many thanks, in the order of appearance in the LinkedIn discussion, to Dr. Pierre-Antoine GARCIA, Theunis Beukman, Benoit Derat, Hüseyin Yiğit, Andreas Barchanski for the insightful LinkedIn discussion which led to this post.</p>
