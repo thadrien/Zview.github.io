@@ -19,9 +19,9 @@ In [116] and [29], tables of [84] are used to calculate a low-pass matching netw
 
 For these reasons this page describes in detail the calculation of such impedance matching networks. The calculation method is the one of [84], adapted for the needs of the PhD thesis.
 
-As usual,  &&f&& is the usual frequency in &&s^-1&& and &&\omega&& the angular pulsation in &&rad \cdot s^-1&&. Calculations will use mainly &&\omega&&.
+As usual, <asciimath>f</asciimath> is the usual frequency in <asciimath>s^-1</asciimath> and <asciimath>\omega</asciimath> the angular pulsation in <asciimath>rad \cdot s^-1</asciimath>. Calculations will use mainly <asciimath>\omega</asciimath>.
 
-In a first time, the matching network is calculated for the center frequency &&\omega_m=1&& and source impedance &&R_S=1&&. This normalization is not mandatory, but allows to compare intermediate results with those of [84] to test the good operation of the Python program which was written during the PhD thesis.
+In a first time, the matching network is calculated for the center frequency <asciimath>\omega_m=1</asciimath> and source impedance <asciimath>R_S=1</asciimath>. This normalization is not mandatory, but allows to compare intermediate results with those of [84] to test the good operation of the Python program which was written during the PhD thesis.
 
 The reflexion coefficient of a LC ladder (output) matching network of type Chebychev, seen from the source, is[^2]:
 
@@ -29,7 +29,7 @@ The reflexion coefficient of a LC ladder (output) matching network of type Cheby
 |\Gamma|^2 = (\epsilon^2\cdotT_n^2((\omega^2-\omega_0^2)/(\Delta\omega^2)))/(1+\epsilon^2\cdotT_n^2((\omega^2-\omega_0^2)/(\Delta\omega^2)))
 </asciimath>
 
-with &&\omega_0=sqrt(\omega_a+\omega_b)&&, &&\omega_a&& the beginning of the passband, and &&\omega_b&& the end of the passband.
+with <asciimath>\omega_0=sqrt(\omega_a+\omega_b)</asciimath>, <asciimath>\omega_a</asciimath> the beginning of the passband, and <asciimath>\omega_b</asciimath> the end of the passband.
 
 Next figure shows the reflection coefficient seen from the source of an example of an (output) LC matching network going from 5&#8239;Ω towards 50&#8239;Ω from 1 to 2,5&#8239;GHz. These values are approximately those of the first wideband amplifier of the PhD thesis.
 
@@ -41,7 +41,7 @@ FIXME: Translate French titles, add alt text.
   <figcaption>Fig.&#8239;1. Example of reflection coefficient seen from the source of an LC matching network. See text for parameters.</figcaption>
 </figure>
 
-In previous expression, &&\epsilon&& is chosen such as:
+In previous expression, <asciimath>\epsilon</asciimath> is chosen such as:
 
 <asciimath>
 |\Gamma(f=0)|^2=((Z_2-Z_1)/(Z_2+Z_1))^2
