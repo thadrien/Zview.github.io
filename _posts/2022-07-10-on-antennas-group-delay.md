@@ -5,7 +5,7 @@ permalink: /posts/on-antennas-group-delay.html
 last_modified_at: 2022-07-10 16-54
 ---
 
-<p class="note">Many thanks, in the order of appearance in the LinkedIn discussion, to Dr. Pierre-Antoine GARCIA, Theunis Beukman, Benoit Derat, Hüseyin Yiğit, Andreas Barchanski for the insightful LinkedIn discussion which led to this post.</p>
+<p class="note">Many thanks, in the order of appearance in the LinkedIn discussion, to Dr. Pierre-Antoine Garcia, Theunis Beukman, Benoit Derat, Hüseyin Yiğit, Andreas Barchanski for the insightful LinkedIn discussion which led to this post.</p>
 
 Recently on LinkedIn, a fellow colleague asked whether the group delay of an antenna could be calculated by the simulated complex gain. Sure it can, but with the right precautions.
 
