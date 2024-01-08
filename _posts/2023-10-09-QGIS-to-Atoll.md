@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Export QGIS maps and terrain height data to Forsk Atoll
+title: Export QGIS maps and terrain height data to Forsk Atoll.
 permalink: /posts/QGIS-to-Atoll.html
 last_modified_at: 2023-10-09 12:17
 ---
