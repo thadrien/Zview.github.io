@@ -2,10 +2,14 @@
 layout: post
 title: Transfer S parameters.
 permalink: /posts/transfer-S-parameters.html
-last_modified_at: 2023-01-07 13:17
+last_modified_at: 2023-02-08 04:16
 ---
 
-<p class="begin-note">This content was originally published on Microwaves 101 (<a href="https://www.microwaves101.com/encyclopedias/transfer-s-parameters">https://www.microwaves101.com/encyclopedias/transfer-s-parameters</a>). Many thanks to Steve for hosting the original version. Have a look on his website for more interesting content.</p>
+<p>
+Last edition: 2024-01-08 04:16.
+</p>
+<p class="begin-note">This content was originally published on Microwaves 101 (<a href="https://www.microwaves101.com/encyclopedias/transfer-s-parameters">https://www.microwaves101.com/encyclopedias/transfer-s-parameters</a>). Many thanks to Steve for hosting the original version. Have a look on his website for more interesting content.
+</p>
 
 ## Principle
 
@@ -45,9 +49,11 @@ The following formulas can be used to pass from regular to transfer S parameter:
 
 ### Calculation of characteristic impedance from S parameters
 
-Suppose one wants to measure or simulate the characteristic impedance of something similar to a transmission line. This can be for example a 75 Ohm coax cable or some via structure on HFSS. The characteristic impedance can be calculated form its measured or simulated S parameters references to 50 Ohm.
+Suppose one wants to measure or simulate the characteristic impedance of something similar to a transmission line. This can be for example a 75&#8239;Ω coax cable or a via structure on HFSS. The characteristic impedance can be calculated form its measured or simulated S parameters references to 50&#8239;Ω.
 
-Transfer S parameters can be very convenient for this. Expressing the characteristic impedance as a reflection coefficient from 50 Ohm, and recalling that by definition its invariant through the system, the following can be written:
+Suppose also that the structure is "symmetric enough" to have the same characteristic impedance on each side (see <a href="https://en.wikipedia.org/wiki/Image_impedance">https://en.wikipedia.org/wiki/Image_impedance</a>)...
+
+Transfer S parameters can be very convenient for this. Expressing the characteristic impedance as a reflection coefficient from 50&#8239;Ω, and recalling that by definition its invariant through the system, the following can be written:
 
 <asciimath>
   [[b_1],[a_1]] = [[T_11,T_12],[T_21,T_12]] \ [[a_2],[b_2]]
@@ -67,6 +73,7 @@ Rearranging:
   T_21 Gamma^2 + (T_12 - T_11) Gamma - T_12 = 0
 </asciimath>
 
+{% comment %}
 Substituting for S parameters:
 
 <asciimath>
@@ -84,9 +91,22 @@ Which can be solved by the usual methods:
 </asciimath>
 
 <asciimath>
- Gamma_1 = ((S_(11) - S_(12)S_(21) + S_(11)S_(22))+sqrt((S_(11) - S_(12)S_(21) + S_(11)S_(22))^2 - 4*S_(22)*S_(11)))/(2*S_(22))
+ Gamma = ((S_(11) - S_(12)S_(21) + S_(11)S_(22)) +- sqrt((S_(11) - S_(12)S_(21) + S_(11)S_(22))^2 - 4*S_(22)*S_(11)))/(2*S_(22))
+</asciimath>
+{% endcomment %}
+
+Solving by the usual methods:
+<asciimath>
+  Delta = (T_(12)-T_(11))^2+4*T_(21)*T_(12)
+</asciimath>
+<asciimath>
+  Gamma = (T_(11) - T_(12) +- sqrt((T_(12)-T_(11))^2+4*T_(21)*T_(12)))/(2*T_(21))
 </asciimath>
 
-<asciimath>
- Gamma_2 = ((S_(11) - S_(12)S_(21) + S_(11)S_(22))-sqrt((S_(11) - S_(12)S_(21) + S_(11)S_(22))^2 - 4*S_(22)*S_(11)))/(2*S_(22))
-</asciimath>
+So, the procedure, which can be conveniently put in a spreadsheet, can be outlined as follows:
+
+1. Convert S parameters to T parameters using the previous formulas or scikit-rf (<a href="https://scikit-rf.readthedocs.io/en/latest/api/generated/skrf.network.s2t.html">https://scikit-rf.readthedocs.io/en/latest/api/generated/skrf.network.s2t.html</a>)
+
+2. Calculate the <asciimath>Gamma</asciimath> of the characteristic impedance references to 5&#8239;Ω.
+
+3. From the <asciimath>Gamma</asciimath>, calculate the characteristic impedance.
