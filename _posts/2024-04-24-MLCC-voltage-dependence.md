@@ -93,7 +93,7 @@ Let's plot together their bias characteristics[^3]<sup>,</sup>[^4]<sup>,</sup>[^
         var layout = {
             title: "Selected capacitors DC bias characteristics",
             xaxis: {title: {text: "DC Voltage [V]"}},
-            yaxis: {title: {text: "Capacitance [µF]"}, range: [0, 100]}
+            yaxis: {title: {text: "Capacitance [µF]"}, range: [0, 105]}
         };
         Plotly.newPlot('plot-2', traces, layout);
 	};
