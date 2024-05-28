@@ -1,0 +1,350 @@
+---
+layout: post
+title: IQ modulator and quadrature coupler sign issues.
+permalink: /posts/2024-05-28-IQ-quadrature-sign.html
+last_modified_at: 2024-05-28 20:57
+---
+
+## Introduction
+
+IQ modulators and quadrature couplers are often used together to perform a frequency translation while rejecting the unwanted sideband. However, most often in the respective documentations, the sign of the quadrature signal is not clear: does the coupler produces a quadrature output with a +90° or a -90° phase shift, and does the IQ modulator expects a quadrature input with a +90° or a -90° input ?
+
+The purpose of this page is to clarify this sign issue.
+
+## Upconverter side
+
+Here, we assume an upconverter is used. The principle of an IQ upconverter is to perform a complex frequency translation as such:
+
+<asciimath>
+"RF" = Re[(I + j \cdot Q) \cdot e^(j \cdot \omega_("rf") \cdot t)]
+</asciimath>
+
+In the case of a complex cosinus signal in baseband of frequency &&\omega_b&&:
+
+<asciimath>
+I + j \cdot Q = e^(j \cdot \omega_b \cdot t) = cos(\omega_b \cdot t) + j \cdot sin(\omega_b \cdot t)
+</asciimath>
+
+By application of the trigonometric identity &&sin(x) = cos(x - pi / 2)&&:
+
+<asciimath>
+I + j \cdot Q = cos(\omega_b \cdot t) + j \cdot cos(\omega_b \cdot t - \pi / 2)
+</asciimath>
+
+This clearly shows that the Q input has a phase lag compared to the I input, that is a -90° phase.
+
+## Coupler side case 1: coupled line coupler
+
+Let's assume that the coupled line coupler [QCH-451+](https://www.minicircuits.com/WebStore/dashboard.html?model=QCH-451%2B) from Mini-Circuits is used. The datasheet tells which port is the quadrature output but not whether its phase is +90° or -90°.
+
+Using ChatGPT and Plotly gives easily the following plots:
+
+<div id="magnitude-plot-1"></div>
+<div id="phase-plot-1"></div>
+<div id="phase-difference-plot-1"></div>
+
+<script>
+    // Helper function to unwrap phase
+    function unwrapPhase(phase) {
+        let unwrappedPhase = [phase[0]];
+        for (let i = 1; i < phase.length; i++) {
+            let delta = phase[i] - phase[i - 1];
+            if (delta > 180) {
+                unwrappedPhase.push(unwrappedPhase[i - 1] + delta - 360);
+            } else if (delta < -180) {
+                unwrappedPhase.push(unwrappedPhase[i - 1] + delta + 360);
+            } else {
+                unwrappedPhase.push(unwrappedPhase[i - 1] + delta);
+            }
+        }
+        return unwrappedPhase;
+    }
+
+    // Example data parsing and plotting
+    async function fetchAndPlot_1() {
+        // Fetch the S4P file content
+        url = "{{ '/posts/IQ-quadrature-sign/QCH_451+_UN1_+25DEGC.S4P' | relative_url }}";
+        const response = await fetch(url);
+        const s4pText = await response.text();
+        
+        // Parse the S4P file content
+        const lines = s4pText.split('\n');
+        let freq = [];
+        let s11 = [], s21 = [], s31 = [], s41 = [];
+        let phase11 = [], phase21 = [], phase31 = [], phase41 = [];
+
+        for (let line of lines) {
+            line = line.trim();
+            if (line.startsWith('!') || line.startsWith('#') || line.length === 0) {
+                // Skip comment lines and empty lines
+                continue;
+            }
+
+            const parts = line.split(/\s+/);
+            if (parts.length >= 9) {
+                const frequency = parseFloat(parts[0]);
+                if (frequency <= 500e6) { // Filter to include only frequencies up to 500 MHz
+                    freq.push(frequency);
+                    const re11 = parseFloat(parts[1]);
+                    const im11 = parseFloat(parts[2]);
+                    const re21 = parseFloat(parts[3]);
+                    const im21 = parseFloat(parts[4]);
+                    const re31 = parseFloat(parts[5]);
+                    const im31 = parseFloat(parts[6]);
+                    const re41 = parseFloat(parts[7]);
+                    const im41 = parseFloat(parts[8]);
+                    
+                    s11.push(20 * Math.log10(Math.sqrt(re11 ** 2 + im11 ** 2)));
+                    s21.push(20 * Math.log10(Math.sqrt(re21 ** 2 + im21 ** 2)));
+                    s31.push(20 * Math.log10(Math.sqrt(re31 ** 2 + im31 ** 2)));
+                    s41.push(20 * Math.log10(Math.sqrt(re41 ** 2 + im41 ** 2)));
+                    
+                    phase11.push(Math.atan2(im11, re11) * (180 / Math.PI));
+                    phase21.push(Math.atan2(im21, re21) * (180 / Math.PI));
+                    phase31.push(Math.atan2(im31, re31) * (180 / Math.PI));
+                    phase41.push(Math.atan2(im41, re41) * (180 / Math.PI));
+                }
+            }
+        }
+
+        // Unwrap phase
+        phase31 = unwrapPhase(phase31);
+        phase41 = unwrapPhase(phase41);
+
+        // Calculate phase difference
+        let phaseDiff = phase41.map((p41, index) => p41 - phase31[index]);
+
+        // Plotting magnitude using Plotly
+        const traceS11Mag = {
+            x: freq,
+            y: s11,
+            mode: 'lines',
+            name: 'S11 Magnitude'
+        };
+
+        const traceS21Mag = {
+            x: freq,
+            y: s21,
+            mode: 'lines',
+            name: 'S21 Magnitude'
+        };
+
+        const traceS31Mag = {
+            x: freq,
+            y: s31,
+            mode: 'lines',
+            name: 'S31 Magnitude'
+        };
+
+        const traceS41Mag = {
+            x: freq,
+            y: s41,
+            mode: 'lines',
+            name: 'S41 Magnitude'
+        };
+
+        const magData = [traceS11Mag, traceS21Mag, traceS31Mag, traceS41Mag];
+
+        const magLayout = {
+            title: 'S-Parameters Magnitude Plot (0 to 500 MHz)',
+            xaxis: { title: 'Frequency (Hz)', range: [0, 500e6] },
+            yaxis: { title: 'Magnitude (dB)', range: [-50, 0] }
+        };
+
+        Plotly.newPlot('magnitude-plot-1', magData, magLayout);
+
+        // Plotting phase using Plotly
+        const traceS31Phase = {
+            x: freq,
+            y: phase31,
+            mode: 'lines',
+            name: 'S31 Phase'
+        };
+
+        const traceS41Phase = {
+            x: freq,
+            y: phase41,
+            mode: 'lines',
+            name: 'S41 Phase'
+        };
+
+        const phaseData = [traceS31Phase, traceS41Phase];
+
+        const phaseLayout = {
+            title: 'S-Parameters Phase Plot (0 to 500 MHz)',
+            xaxis: { title: 'Frequency (Hz)', range: [0, 500e6] },
+            yaxis: { title: 'Phase (Degrees)' }
+        };
+
+        Plotly.newPlot('phase-plot-1', phaseData, phaseLayout);
+
+        // Plotting phase difference using Plotly
+        const tracePhaseDiff = {
+            x: freq,
+            y: phaseDiff,
+            mode: 'lines',
+            name: 'Phase Difference (S41 - S31)'
+        };
+
+        const phaseDiffData = [tracePhaseDiff];
+
+        const phaseDiffLayout = {
+            title: 'Phase Difference Plot (S41 - S31)',
+            xaxis: { title: 'Frequency (Hz)', range: [0, 500e6] },
+            yaxis: { title: 'Phase Difference (Degrees)' }
+        };
+
+        Plotly.newPlot('phase-difference-plot-1', phaseDiffData, phaseDiffLayout);
+    }
+
+    fetchAndPlot_1();
+</script>
+
+It's clear from the plots than the quadrature output has a +90° phase compared to the in-phase output.
+
+## Coupler side case 2: branch-line coupler
+
+<div id="magnitude-plot-2"></div>
+<div id="phase-plot-2"></div>
+<div id="phase-difference-plot-2"></div>
+
+<script>
+    // Example data parsing and plotting
+    async function fetchAndPlot_2() {
+        // Fetch the S4P file content
+        url = "{{ '/posts/IQ-quadrature-sign/branchline_coupler.s4p' | relative_url }}";
+        const response = await fetch(url);
+        const s4pText = await response.text();
+        
+        // Parse the S4P file content
+        const lines = s4pText.split('\n');
+        let freq = [];
+        let s11 = [], s21 = [], s31 = [], s41 = [];
+        let phase11 = [], phase21 = [], phase31 = [], phase41 = [];
+
+        for (let line of lines) {
+            line = line.trim();
+            if (line.startsWith('!') || line.startsWith('#') || line.length === 0) {
+                // Skip comment lines and empty lines
+                continue;
+            }
+
+            const parts = line.split(/\s+/);
+            if (parts.length >= 9) {
+                const frequency = parseFloat(parts[0]);
+                if (frequency <= 2e9) { // Filter to include only frequencies up to 2 GHz
+                    freq.push(frequency);
+                    const re11 = parseFloat(parts[1]);
+                    const im11 = parseFloat(parts[2]);
+                    const re21 = parseFloat(parts[3]);
+                    const im21 = parseFloat(parts[4]);
+                    const re31 = parseFloat(parts[5]);
+                    const im31 = parseFloat(parts[6]);
+                    const re41 = parseFloat(parts[7]);
+                    const im41 = parseFloat(parts[8]);
+                    
+                    s11.push(20 * Math.log10(Math.sqrt(re11 ** 2 + im11 ** 2)));
+                    s21.push(20 * Math.log10(Math.sqrt(re21 ** 2 + im21 ** 2)));
+                    s31.push(20 * Math.log10(Math.sqrt(re31 ** 2 + im31 ** 2)));
+                    s41.push(20 * Math.log10(Math.sqrt(re41 ** 2 + im41 ** 2)));
+                    
+                    phase11.push(Math.atan2(im11, re11) * (180 / Math.PI));
+                    phase21.push(Math.atan2(im21, re21) * (180 / Math.PI));
+                    phase31.push(Math.atan2(im31, re31) * (180 / Math.PI));
+                    phase41.push(Math.atan2(im41, re41) * (180 / Math.PI));
+                }
+            }
+        }
+
+        // Unwrap phase
+        phase31 = unwrapPhase(phase31);
+        phase41 = unwrapPhase(phase41);
+
+        // Calculate phase difference
+        let phaseDiff = phase31.map((p31, index) => p31 - phase21[index]);
+
+        // Plotting magnitude using Plotly
+        const traceS11Mag = {
+            x: freq,
+            y: s11,
+            mode: 'lines',
+            name: 'S11 Magnitude'
+        };
+
+        const traceS21Mag = {
+            x: freq,
+            y: s21,
+            mode: 'lines',
+            name: 'S21 Magnitude'
+        };
+
+        const traceS31Mag = {
+            x: freq,
+            y: s31,
+            mode: 'lines',
+            name: 'S31 Magnitude'
+        };
+
+        const traceS41Mag = {
+            x: freq,
+            y: s41,
+            mode: 'lines',
+            name: 'S41 Magnitude'
+        };
+
+        const magData = [traceS11Mag, traceS21Mag, traceS31Mag, traceS41Mag];
+
+        const magLayout = {
+            title: 'S-Parameters Magnitude Plot (0 to 2 GHz)',
+            xaxis: { title: 'Frequency (Hz)', range: [0, 2e9] },
+            yaxis: { title: 'Magnitude (dB)', range: [-50, 0] }
+        };
+
+        Plotly.newPlot('magnitude-plot-2', magData, magLayout);
+
+        // Plotting phase using Plotly
+        const traceS21Phase = {
+            x: freq,
+            y: phase21,
+            mode: 'lines',
+            name: 'S21 Phase'
+        };
+
+        const traceS31Phase = {
+            x: freq,
+            y: phase31,
+            mode: 'lines',
+            name: 'S31 Phase'
+        };
+
+        const phaseData = [traceS21Phase, traceS31Phase];
+
+        const phaseLayout = {
+            title: 'S-Parameters Phase Plot (0 to 2 GHz)',
+            xaxis: { title: 'Frequency (Hz)', range: [0, 2e9] },
+            yaxis: { title: 'Phase (Degrees)' }
+        };
+
+        Plotly.newPlot('phase-plot-2', phaseData, phaseLayout);
+
+        // Plotting phase difference using Plotly
+        const tracePhaseDiff = {
+            x: freq,
+            y: phaseDiff,
+            mode: 'lines',
+            name: 'Phase Difference (S31 - S21)'
+        };
+
+        const phaseDiffData = [tracePhaseDiff];
+
+        const phaseDiffLayout = {
+            title: 'Phase Difference Plot (S31 - S21)',
+            xaxis: { title: 'Frequency (Hz)', range: [0, 2e9] },
+            yaxis: { title: 'Phase Difference (Degrees)' }
+        };
+
+        Plotly.newPlot('phase-difference-plot-2', phaseDiffData, phaseDiffLayout);
+    }
+
+    fetchAndPlot_2();
+</script>

@@ -5,9 +5,6 @@ permalink: /posts/mlcc-voltage-dependence.html
 last_modified_at: 2024-04-24 12:06
 ---
 
-<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-<script src="https://cdn.plot.ly/plotly-2.31.1.min.js" charset="utf-8"></script>
-
 <p class="begin-note">This content was originally published on Microwaves 101 (<a href="https://www.microwaves101.com/encyclopedias/capacitor-voltage-effects">https://www.microwaves101.com/encyclopedias/capacitor-voltage-effects</a>). Many thanks to Steve for improvements on the original version. Have a look on his website for more interesting content.</p>
 
 > This page was suggested by Hadrien, who has had recent experience in MLC capacitor variations with voltage.  Did you know your capacitor nominal value can drop 80% when you apply a DC voltage to it?  Worse, there does not seem to be any standards for voltage variations like there are for temperature variations.
