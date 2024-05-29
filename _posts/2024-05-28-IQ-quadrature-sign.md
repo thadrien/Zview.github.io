@@ -60,14 +60,11 @@ Using ChatGPT and Plotly gives easily the following plots:
         return unwrappedPhase;
     }
 
-    // Example data parsing and plotting
-    async function fetchAndPlot_1() {
-        // Fetch the S4P file content
-        url = "{{ '/posts/IQ-quadrature-sign/QCH_451+_UN1_+25DEGC.S4P' | relative_url }}";
+    // Helper function to load and parse S4P file
+    async function loadS4P(url, fmax) {
         const response = await fetch(url);
         const s4pText = await response.text();
         
-        // Parse the S4P file content
         const lines = s4pText.split('\n');
         let freq = [];
         let s11 = [], s21 = [], s31 = [], s41 = [];
@@ -76,14 +73,13 @@ Using ChatGPT and Plotly gives easily the following plots:
         for (let line of lines) {
             line = line.trim();
             if (line.startsWith('!') || line.startsWith('#') || line.length === 0) {
-                // Skip comment lines and empty lines
                 continue;
             }
 
             const parts = line.split(/\s+/);
             if (parts.length >= 9) {
                 const frequency = parseFloat(parts[0]);
-                if (frequency <= 500e6) { // Filter to include only frequencies up to 500 MHz
+                if (frequency <= fmax) {
                     freq.push(frequency);
                     const re11 = parseFloat(parts[1]);
                     const im11 = parseFloat(parts[2]);
@@ -106,44 +102,27 @@ Using ChatGPT and Plotly gives easily the following plots:
                 }
             }
         }
+        return { freq, s11, s21, s31, s41, phase11, phase21, phase31, phase41 };
+    }
 
+    async function fetchAndPlot_1() {
+        url = "{{ '/posts/IQ-quadrature-sign/QCH_451+_UN1_+25DEGC.S4P' | relative_url }}";
+        const data = await loadS4P(url, 500e6);
+        
         // Unwrap phase
-        phase31 = unwrapPhase(phase31);
-        phase41 = unwrapPhase(phase41);
+        data.phase31 = unwrapPhase(data.phase31);
+        data.phase41 = unwrapPhase(data.phase41);
 
         // Calculate phase difference
-        let phaseDiff = phase41.map((p41, index) => p41 - phase31[index]);
+        let phaseDiff = data.phase41.map((p41, index) => p41 - data.phase31[index]);
 
         // Plotting magnitude using Plotly
-        const traceS11Mag = {
-            x: freq,
-            y: s11,
-            mode: 'lines',
-            name: 'S11 Magnitude'
-        };
-
-        const traceS21Mag = {
-            x: freq,
-            y: s21,
-            mode: 'lines',
-            name: 'S21 Magnitude'
-        };
-
-        const traceS31Mag = {
-            x: freq,
-            y: s31,
-            mode: 'lines',
-            name: 'S31 Magnitude'
-        };
-
-        const traceS41Mag = {
-            x: freq,
-            y: s41,
-            mode: 'lines',
-            name: 'S41 Magnitude'
-        };
-
-        const magData = [traceS11Mag, traceS21Mag, traceS31Mag, traceS41Mag];
+        const magData = [
+            { x: data.freq, y: data.s11, mode: 'lines', name: 'S11 Magnitude' },
+            { x: data.freq, y: data.s21, mode: 'lines', name: 'S21 Magnitude' },
+            { x: data.freq, y: data.s31, mode: 'lines', name: 'S31 Magnitude' },
+            { x: data.freq, y: data.s41, mode: 'lines', name: 'S41 Magnitude' }
+        ];
 
         const magLayout = {
             title: 'S-Parameters Magnitude Plot (0 to 500 MHz)',
@@ -154,21 +133,10 @@ Using ChatGPT and Plotly gives easily the following plots:
         Plotly.newPlot('magnitude-plot-1', magData, magLayout);
 
         // Plotting phase using Plotly
-        const traceS31Phase = {
-            x: freq,
-            y: phase31,
-            mode: 'lines',
-            name: 'S31 Phase'
-        };
-
-        const traceS41Phase = {
-            x: freq,
-            y: phase41,
-            mode: 'lines',
-            name: 'S41 Phase'
-        };
-
-        const phaseData = [traceS31Phase, traceS41Phase];
+        const phaseData = [
+            { x: data.freq, y: data.phase31, mode: 'lines', name: 'S31 Phase' },
+            { x: data.freq, y: data.phase41, mode: 'lines', name: 'S41 Phase' }
+        ];
 
         const phaseLayout = {
             title: 'S-Parameters Phase Plot (0 to 500 MHz)',
@@ -179,14 +147,9 @@ Using ChatGPT and Plotly gives easily the following plots:
         Plotly.newPlot('phase-plot-1', phaseData, phaseLayout);
 
         // Plotting phase difference using Plotly
-        const tracePhaseDiff = {
-            x: freq,
-            y: phaseDiff,
-            mode: 'lines',
-            name: 'Phase Difference (S41 - S31)'
-        };
-
-        const phaseDiffData = [tracePhaseDiff];
+        const phaseDiffData = [
+            { x: data.freq, y: phaseDiff, mode: 'lines', name: 'Phase Difference (S41 - S31)' }
+        ];
 
         const phaseDiffLayout = {
             title: 'Phase Difference Plot (S41 - S31)',
@@ -209,90 +172,24 @@ It's clear from the plots than the quadrature output has a +90° phase compared 
 <div id="phase-difference-plot-2"></div>
 
 <script>
-    // Example data parsing and plotting
     async function fetchAndPlot_2() {
-        // Fetch the S4P file content
         url = "{{ '/posts/IQ-quadrature-sign/branchline_coupler.s4p' | relative_url }}";
-        const response = await fetch(url);
-        const s4pText = await response.text();
+        const data = await loadS4P(url, 2e9);
         
-        // Parse the S4P file content
-        const lines = s4pText.split('\n');
-        let freq = [];
-        let s11 = [], s21 = [], s31 = [], s41 = [];
-        let phase11 = [], phase21 = [], phase31 = [], phase41 = [];
-
-        for (let line of lines) {
-            line = line.trim();
-            if (line.startsWith('!') || line.startsWith('#') || line.length === 0) {
-                // Skip comment lines and empty lines
-                continue;
-            }
-
-            const parts = line.split(/\s+/);
-            if (parts.length >= 9) {
-                const frequency = parseFloat(parts[0]);
-                if (frequency <= 2e9) { // Filter to include only frequencies up to 2 GHz
-                    freq.push(frequency);
-                    const re11 = parseFloat(parts[1]);
-                    const im11 = parseFloat(parts[2]);
-                    const re21 = parseFloat(parts[3]);
-                    const im21 = parseFloat(parts[4]);
-                    const re31 = parseFloat(parts[5]);
-                    const im31 = parseFloat(parts[6]);
-                    const re41 = parseFloat(parts[7]);
-                    const im41 = parseFloat(parts[8]);
-                    
-                    s11.push(20 * Math.log10(Math.sqrt(re11 ** 2 + im11 ** 2)));
-                    s21.push(20 * Math.log10(Math.sqrt(re21 ** 2 + im21 ** 2)));
-                    s31.push(20 * Math.log10(Math.sqrt(re31 ** 2 + im31 ** 2)));
-                    s41.push(20 * Math.log10(Math.sqrt(re41 ** 2 + im41 ** 2)));
-                    
-                    phase11.push(Math.atan2(im11, re11) * (180 / Math.PI));
-                    phase21.push(Math.atan2(im21, re21) * (180 / Math.PI));
-                    phase31.push(Math.atan2(im31, re31) * (180 / Math.PI));
-                    phase41.push(Math.atan2(im41, re41) * (180 / Math.PI));
-                }
-            }
-        }
-
         // Unwrap phase
-        phase31 = unwrapPhase(phase31);
-        phase41 = unwrapPhase(phase41);
+        data.phase21 = unwrapPhase(data.phase21);
+        data.phase31 = unwrapPhase(data.phase31);
 
         // Calculate phase difference
-        let phaseDiff = phase31.map((p31, index) => p31 - phase21[index]);
+        let phaseDiff = data.phase31.map((p31, index) => p31 - data.phase21[index]);
 
         // Plotting magnitude using Plotly
-        const traceS11Mag = {
-            x: freq,
-            y: s11,
-            mode: 'lines',
-            name: 'S11 Magnitude'
-        };
-
-        const traceS21Mag = {
-            x: freq,
-            y: s21,
-            mode: 'lines',
-            name: 'S21 Magnitude'
-        };
-
-        const traceS31Mag = {
-            x: freq,
-            y: s31,
-            mode: 'lines',
-            name: 'S31 Magnitude'
-        };
-
-        const traceS41Mag = {
-            x: freq,
-            y: s41,
-            mode: 'lines',
-            name: 'S41 Magnitude'
-        };
-
-        const magData = [traceS11Mag, traceS21Mag, traceS31Mag, traceS41Mag];
+        const magData = [
+            { x: data.freq, y: data.s11, mode: 'lines', name: 'S11 Magnitude' },
+            { x: data.freq, y: data.s21, mode: 'lines', name: 'S21 Magnitude' },
+            { x: data.freq, y: data.s31, mode: 'lines', name: 'S31 Magnitude' },
+            { x: data.freq, y: data.s41, mode: 'lines', name: 'S41 Magnitude' }
+        ];
 
         const magLayout = {
             title: 'S-Parameters Magnitude Plot (0 to 2 GHz)',
@@ -303,21 +200,10 @@ It's clear from the plots than the quadrature output has a +90° phase compared 
         Plotly.newPlot('magnitude-plot-2', magData, magLayout);
 
         // Plotting phase using Plotly
-        const traceS21Phase = {
-            x: freq,
-            y: phase21,
-            mode: 'lines',
-            name: 'S21 Phase'
-        };
-
-        const traceS31Phase = {
-            x: freq,
-            y: phase31,
-            mode: 'lines',
-            name: 'S31 Phase'
-        };
-
-        const phaseData = [traceS21Phase, traceS31Phase];
+        const phaseData = [
+            { x: data.freq, y: data.phase21, mode: 'lines', name: 'S21 Phase' },
+            { x: data.freq, y: data.phase31, mode: 'lines', name: 'S31 Phase' }
+        ];
 
         const phaseLayout = {
             title: 'S-Parameters Phase Plot (0 to 2 GHz)',
@@ -328,14 +214,9 @@ It's clear from the plots than the quadrature output has a +90° phase compared 
         Plotly.newPlot('phase-plot-2', phaseData, phaseLayout);
 
         // Plotting phase difference using Plotly
-        const tracePhaseDiff = {
-            x: freq,
-            y: phaseDiff,
-            mode: 'lines',
-            name: 'Phase Difference (S31 - S21)'
-        };
-
-        const phaseDiffData = [tracePhaseDiff];
+        const phaseDiffData = [
+            { x: data.freq, y: phaseDiff, mode: 'lines', name: 'Phase Difference (S31 - S21)' }
+        ];
 
         const phaseDiffLayout = {
             title: 'Phase Difference Plot (S31 - S21)',
