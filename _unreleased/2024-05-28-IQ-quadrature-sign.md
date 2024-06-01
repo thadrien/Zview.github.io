@@ -165,6 +165,36 @@ Using ChatGPT and Plotly gives easily the following plots:
 
 It's clear from the plots than the quadrature output has a +90° phase (lead) compared to the in-phase output.
 
+Besides clarifying the +/-90° sign issue, it is useful to check to what physical element correspond each port number. The hypothesis is that this coupler is made with an equivalent to coupled lines performed using an LC network, pure coupled lines being obviously too big to fit in the component.
+
+Analysis of the transmission curves enables to deduce the connexions:
+
+* At low frequencies, total transmission from port 1 to port 3 and no transmission to the other ports. Thus both ports are connected to the same first transmission line and ports 2 and 3 are connected to the second line.
+
+* Port 4 is not connected at low frequencies but is coupled in the band. So port 4 is the coupled port of the other line.
+
+* Port 2 is not connecter at low frequencies and remains approximately isolated in the band. So port 2 is the coupled output of the second line.
+
+Which leads to the following recapitulating schematic, compared to the datasheet information:
+
+<!-- FIXME: Add alt textes and titles. -->
+<table>
+<tr>
+<td>
+<img src="{{ '/posts/IQ-quadrature-sign/mini-circuits-pins.svg' | relative_url }}" >
+</td>
+<td>
+<img src="{{ '/posts/IQ-quadrature-sign/qch-451+-1.svg' | relative_url }}" >
+</td>
+</tr>
+</table>
+
+The symmetry of the schematic is coherent with the symmetry of the table given in the datasheet of Mini-Circuits:
+
+<img src="{{ '/posts/IQ-quadrature-sign/qch-451+-2.svg' | relative_url }}" >
+
+The +90 phase shift stays even at low frequencies. This is coherent with the similar behaviour of an high-pass CR network, which is part of the equivalent schematic at low frequencies.
+
 ## Coupler side case 2: branch-line coupler
 
 In this part, the ports are numbered like in Microwaves101 ([https://www.microwaves101.com/encyclopedias/branchline-couplers](https://www.microwaves101.com/encyclopedias/branchline-couplers)), from which this schematic is taken:
