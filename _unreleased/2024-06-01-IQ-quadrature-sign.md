@@ -7,19 +7,19 @@ last_modified_at: 2024-06-01 17:08
 
 ## Introduction
 
-IQ modulators and quadrature couplers are often used together to perform a frequency translation while rejecting the unwanted sideband. However, most often in the respective documentations, the sign of the quadrature signal is not clear: does the coupler produces a quadrature output with a +90° or a -90° phase shift, and does the IQ modulator expects a quadrature input with a +90° or a -90° input ?
+IQ modulators and quadrature couplers are often used together to perform a frequency translation while rejecting the unwanted sideband. However, the documentation often does not clarify whether the quadrature signal has a +90° or -90° phase shift, and whether the IQ modulator expects a quadrature input with a +90° or -90° phase shift.
 
 The purpose of this page is to clarify this sign issue.
 
 ## Upconverter side
 
-Here, we assume an upconverter is used. The principle of an IQ upconverter is to perform a complex frequency translation as such:
+Here, we assume an upconverter is used. The principle of an IQ upconverter is to perform a complex frequency translation as follows:
 
 <asciimath>
 "RF" = Re[(I + j \cdot Q) \cdot e^(j \cdot \omega_("rf") \cdot t)]
 </asciimath>
 
-In the case of a complex cosinus signal in baseband of frequency &&\omega_b&&:
+In the case of a complex cosine signal in baseband with frequency &&\omega_b&&:
 
 <asciimath>
 I + j \cdot Q = e^(j \cdot \omega_b \cdot t) = cos(\omega_b \cdot t) + j \cdot sin(\omega_b \cdot t)
@@ -31,13 +31,13 @@ By application of the trigonometric identity &&sin(x) = cos(x - pi / 2)&&:
 I + j \cdot Q = cos(\omega_b \cdot t) + j \cdot cos(\omega_b \cdot t - \pi / 2)
 </asciimath>
 
-This clearly shows that the Q input has a phase lag compared to the I input, that is a -90° phase.
+This clearly shows that the Q input has a phase lag compared to the I input, which is a -90° phase.
 
 ## Coupler side case 1: coupled line coupler
 
-Let's assume that the coupled line coupler [QCH-451+](https://www.minicircuits.com/WebStore/dashboard.html?model=QCH-451%2B) from Mini-Circuits is used. The datasheet tells which port is the quadrature output but not whether its phase is +90° or -90°.
+Let's assume that the coupled line coupler [QCH-451+](https://www.minicircuits.com/WebStore/dashboard.html?model=QCH-451%2B) from Mini-Circuits is used. The datasheet indicates which port is the quadrature output but not whether its phase is +90° or -90°.
 
-Using ChatGPT and Plotly gives easily the following plots:
+Using ChatGPT and Plotly, the following plots were easily generated:
 
 <div id="magnitude-plot-1"></div>
 <div id="phase-plot-1"></div>
@@ -165,7 +165,7 @@ Using ChatGPT and Plotly gives easily the following plots:
 
 It's clear from the plots than the quadrature output has a +90° phase (lead) compared to the in-phase output.
 
-Besides clarifying the +/-90° sign issue, it is useful to check to what physical element correspond each port number. The hypothesis is that this coupler is made with an equivalent to coupled lines performed using an LC network, pure coupled lines being obviously too big to fit in the component.
+Besides clarifying the +/-90° sign issue, it is useful to check to what physical element correspond each port number. The hypothesis is that this coupler is made with an equivalent to coupled lines performed using an LC network, as pure coupled lines are obviously too long to fit in the component.
 
 Analysis of the transmission curves enables to deduce the connexions:
 
@@ -175,7 +175,7 @@ Analysis of the transmission curves enables to deduce the connexions:
 
 * Port 2 is not connecter at low frequencies and remains approximately isolated in the band. So port 2 is the coupled output of the second line.
 
-Which leads to the following recapitulating schematic, compared to the datasheet information:
+This leads to the following schematic, compared to the datasheet information:
 
 <!-- FIXME: Add alt textes and titles. -->
 <table>
@@ -189,7 +189,7 @@ Which leads to the following recapitulating schematic, compared to the datasheet
 </tr>
 </table>
 
-The symmetry of the schematic is coherent with the symmetry of the table given in the datasheet of Mini-Circuits:
+The symmetry of the schematic is coherent with the symmetry of the table given in the Mini-Circuits datasheet:
 
 <img src="{{ '/posts/IQ-quadrature-sign/qch-451+-2.svg' | relative_url }}" >
 
@@ -201,7 +201,7 @@ In this part, the ports are numbered like in Microwaves101 ([https://www.microwa
 
 <img src="{{ '/posts/IQ-quadrature-sign/quadrature-coupler.jpg' | relative_url }}">
 
-This part was performed in two steps. First, using scikit-rf with a some help of ChatGPT, make a Python script which produced some preliminaty plots to check the results and a s4p fil. The second step is to re-use the plots code from the previous section, with some help of ChatGPT to refactor the duplicate parts, to make the following plots:
+This part was performed in two steps. First, using scikit-rf with a some help of ChatGPT, a Python script was created to produce preliminary plots and an s4p file.  The second step was to reuse the plotting code from the previous section, with some help from ChatGPT to refactor the duplicate parts, to make the following plots:
 
 <div id="magnitude-plot-2"></div>
 <div id="phase-plot-2"></div>
@@ -266,10 +266,10 @@ This part was performed in two steps. First, using scikit-rf with a some help of
     fetchAndPlot_2();
 </script>
 
-Contrary to the coupled lines, who have a very broadband quadrature effect, the branchline coupler has a narrowband quadrature effect. Still useful for narroband applications.
+Contrary to coupled lines, which have a very broadband quadrature effect, the branch-line coupler has a narrowband quadrature effect. This is still useful for narrowband applications.
 
 It's clear from the plots than the coupled output has a -90° phase (lag) compared to the direct output.
 
 ## Conclusion
 
-Quadrature couplers are important to make image reject mixers, but the actual phase sign is sometimes not told clearly. According to the theory, IQ mixers needs a -90° phase (lag) for the Q input. For coupled lines couplers, the coupled output has a +90° (lead) phase compared to the uncoupled output. Contrary to that, for branchline couplers, the coupled output has a -90° (lag) phase compared to the uncoupled output. These points must be taken into account to select the wanted mixer side.
+Quadrature couplers are important for making image reject mixers, but the actual phase sign is sometimes not clearly stated. According to the theory, IQ mixers needs a -90° phase (lag) for the Q input. For coupled lines couplers, the coupled output has a +90° (lead) phase compared to the uncoupled output. Conversely, for branchline couplers, the coupled output has a -90° (lag) phase compared to the uncoupled output. These points must be considered when selecting the wanted mixer side.
