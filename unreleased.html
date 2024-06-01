@@ -15,7 +15,7 @@ sitemap: false
 
       <span class="post-date">{{ post.date | date_to_string }}</span>
 
-      {{ post.content | markdownify }}  # FIXME: temp fix.
+      {{ post.content | markdownify }}  {% comment %} FIXME: temp fix. {% endcomment %}
     </div>
   {% endfor %}
 </div>
