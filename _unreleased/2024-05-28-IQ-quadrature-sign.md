@@ -1,7 +1,7 @@
 ---
 layout: post
 title: IQ modulator and quadrature coupler sign issues.
-permalink: /posts/2024-05-28-IQ-quadrature-sign.html
+# permalink: /posts/2024-05-28-IQ-quadrature-sign.html
 last_modified_at: 2024-05-28 20:57
 ---
 
@@ -106,7 +106,7 @@ Using ChatGPT and Plotly gives easily the following plots:
     }
 
     async function fetchAndPlot_1() {
-        url = "{{ '/posts/IQ-quadrature-sign/QCH_451+_UN1_+25DEGC.S4P' | relative_url }}";
+        url = "../posts/IQ-quadrature-sign/QCH_451+_UN1_+25DEGC.S4P";  // FIXME: temp fix.
         const data = await loadS4P(url, 500e6);
         
         // Unwrap phase
@@ -179,7 +179,7 @@ This part was performed in two steps. First, using scikit-rf with a some help of
 
 <script>
     async function fetchAndPlot_2() {
-        url = "{{ '/posts/IQ-quadrature-sign/branchline_coupler.s4p' | relative_url }}";
+        url = "../posts/IQ-quadrature-sign/branchline_coupler.s4p";  // FIXME: temp fix.
         const data = await loadS4P(url, 2e9);
         
         // Unwrap phase
