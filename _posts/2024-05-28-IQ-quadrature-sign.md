@@ -163,9 +163,15 @@ Using ChatGPT and Plotly gives easily the following plots:
     fetchAndPlot_1();
 </script>
 
-It's clear from the plots than the quadrature output has a +90° phase compared to the in-phase output.
+It's clear from the plots than the quadrature output has a +90° phase (lead) compared to the in-phase output.
 
 ## Coupler side case 2: branch-line coupler
+
+In this part, the ports are numbered like in Microwaves101 ([https://www.microwaves101.com/encyclopedias/branchline-couplers](https://www.microwaves101.com/encyclopedias/branchline-couplers)), from which this schematic is taken:
+
+<img src="{{ '/posts/IQ-quadrature-sign/quadrature-coupler.jpg' | relative_url }}">
+
+This part was performed in two steps. First, using scikit-rf with a some help of ChatGPT, make a Python script which produced some preliminaty plots to check the results and a s4p fil. The second step is to re-use the plots code from the previous section, with some help of ChatGPT to refactor the duplicate parts, to make the following plots:
 
 <div id="magnitude-plot-2"></div>
 <div id="phase-plot-2"></div>
@@ -229,3 +235,11 @@ It's clear from the plots than the quadrature output has a +90° phase compared 
 
     fetchAndPlot_2();
 </script>
+
+Contrary to the coupled lines, who have a very broadband quadrature effect, the branchline coupler has a narrowband quadrature effect. Still useful for narroband applications.
+
+It's clear from the plots than the coupled output has a -90° phase (lag) compared to the direct output.
+
+## Conclusion
+
+Quadrature couplers are important to make image reject mixers, but the actual phase sign is sometimes not told clearly. According to the theory, IQ mixers needs a -90° phase (lag) for the Q input. For coupled lines couplers, the coupled output has a +90° (lead) phase compared to the uncoupled output. Contrary to that, for branchline couplers, the coupled output has a -90° (lag) phase compared to the uncoupled output. These points must be taken into account to select the wanted mixer side.
