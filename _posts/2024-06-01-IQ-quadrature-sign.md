@@ -1,7 +1,7 @@
 ---
 layout: post
 title: IQ modulator and quadrature coupler sign issues.
-# permalink: /posts/IQ-quadrature-sign.html
+permalink: /posts/IQ-quadrature-sign.html
 last_modified_at: 2024-06-01 17:08
 ---
 
