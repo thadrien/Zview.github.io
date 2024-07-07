@@ -163,10 +163,17 @@ Fig. 1 compares the asymptotic behavior of IPC-2141 formulas with the good formu
 
 Despite the problems of IPC-2141 formulas, they are used in several online calculators[^33]<sup>,</sup>[^34]<sup>,</sup>[^35]<sup>,</sup>[^36]<sup>,</sup>[^37]<sup>,</sup>[^38]<sup>,</sup>[^39]<sup>,</sup>[^40]. Some calculators[^33]<sup>,</sup>[^34]<sup>,</sup>[^35] give warnings when using IPC-2141 formulas outside of their validity range like shown in Fig. 3. On the contrary, some other calculators[^36]<sup>,</sup>[^37]<sup>,</sup>[^38]<sup>,</sup>[^39]<sup>,</sup>[^40] give neither a warning nor a validity range, including a calculator on a renowned website[^38]. Worse, some calculators[^38]<sup>,</sup>[^39]<sup>,</sup>[^40] even give nonsense negative impedance when fed with proper values without any warning.
 
-<figure>
-  <img src="/posts/microstrip-formulas-comparison/ipc-warning.png">
-  <figcaption>Fig. 4 – Screenshot of a microstrip line impedance calculator[^33] raising a warning when trying to calculate impedances outside IPC-2141 validity range.</figcaption>
-</figure>
+![](/posts/microstrip-formulas-comparison/ipc-warning.png)
+
+<!-- FIXME: Ugly tweak. -->
+<style>
+    .style-figcaption-after + p {
+      font-style: italic;
+      text-align: center;
+    }
+</style>
+<div class="style-figcaption-after"></div>
+Fig. 4 – Screenshot of a microstrip line impedance calculator[^33] raising a warning when trying to calculate impedances outside IPC-2141 validity range.
 
 It should be mentioned that a calculator[^33] not only gives the validity range of the IPC-2141 formula and warns when trying to enter parameters outside of this range, but it also gives accuracy data.
 
@@ -239,7 +246,7 @@ The following table sums up some microstrip calculators and the formulas which t
 
 ## Conclusion
 
-While H&J formulas are the gold standard for calculations, several other formulas give a good trade-off between accuracy and simplicity which are sufficient for most applications. Wheeler 1977 is the clear winner of this tradeoff with 0,66 % error when <asciimath>epsilon_(r,"eff")</asciimath> is not needed. However, on old school Excel sheets, when <asciimath>epsilon_(r,"eff")</asciimath> is needed, the need to duplicate the calculation makes it not anymore convenient than H&J formulas. In this case, Hammerstad 1975 is the winner of this tradeoff with 0,38 % error.
+While H&J formulas are the gold standard for calculations, several other formulas give a good trade-off between accuracy and simplicity which are sufficient for most applications. Wheeler 1977 is the clear winner of this tradeoff with 0.66 % error when <asciimath>epsilon_(r,"eff")</asciimath> is not needed. However, on old school Excel sheets, when <asciimath>epsilon_(r,"eff")</asciimath> is needed, the need to duplicate the calculation makes it not anymore convenient than H&J formulas. In this case, Hammerstad 1975 is the winner of this tradeoff with 0.38 % error.
 
 IPC-2141 formulas have severe issues and must be used with extreme caution.      
 
