@@ -104,9 +104,9 @@ Wheeler 1977 formulas are seen more often than Wheeler 1965 formulas in literatu
   \end{array}
 </latexmath>
 
-They are used in several microwave calculators[^17]<sup>,</sup>[^18]<sup>,</sup>[^19]<sup>,</sup>[^20]<sup>,</sup>[^21]. Calculator[^21] has a mistake in the handling of <asciimath>epsilon_(r,eff)</asciimath>, which can be diagnosed by calculating impedances with <asciimath>epsilon_r=1</asciimath>.
+They are used in several microwave calculators[^17]<sup>,</sup>[^18]<sup>,</sup>[^19]<sup>,</sup>[^20]<sup>,</sup>[^21]. Calculator[^21] has a mistake in the handling of <asciimath>epsilon_(r,"eff")</asciimath>, which can be diagnosed by calculating impedances with <asciimath>epsilon_r=1</asciimath>.
 
-No explicit formula is given for <asciimath>epsilon_(r,eff)</asciimath>. The reason is that it can be calculated with: <asciimath>epsilon_(r,eff)=[(Z_0(h,w,epsilon_r=1))/(Z_0(h,w,epsilon_r=epsilon_r))]^2</asciimath>. This makes these formulas both simple and complex at the same time. In a programming language, it is easy to define a function and to use it two times to calculate . In an old school Excel sheet this would lead to use twice plus one many columns, which more than Hammerstad & Jansen formulas.
+No explicit formula is given for <asciimath>epsilon_(r,"eff")</asciimath>. The reason is that it can be calculated with: <asciimath>epsilon_(r,"eff")=[(Z_0(h,w,epsilon_r=1))/(Z_0(h,w,epsilon_r=epsilon_r))]^2</asciimath>. This makes these formulas both simple and complex at the same time. In a programming language, it is easy to define a function and to use it two times to calculate . In an old school Excel sheet this would lead to use twice plus one many columns, which more than Hammerstad & Jansen formulas.
 
 ### Hammerstad 1975 formulas
 
@@ -239,7 +239,7 @@ The following table sums up some microstrip calculators and the formulas which t
 
 ## Conclusion
 
-While H&J formulas are the gold standard for calculations, several other formulas give a good trade-off between accuracy and simplicity which are sufficient for most applications. Wheeler 1977 is the clear winner of this tradeoff with 0,66 % error when is not needed. However, on old school Excel sheets, when is needed, the need to duplicate the calculation makes it not anymore convenient than H&J formulas. In this case, Hammerstad 1975 is the winner of this tradeoff with 0,38 % error.
+While H&J formulas are the gold standard for calculations, several other formulas give a good trade-off between accuracy and simplicity which are sufficient for most applications. Wheeler 1977 is the clear winner of this tradeoff with 0,66 % error when <asciimath>epsilon_(r,"eff")</asciimath> is not needed. However, on old school Excel sheets, when <asciimath>epsilon_(r,"eff")</asciimath> is needed, the need to duplicate the calculation makes it not anymore convenient than H&J formulas. In this case, Hammerstad 1975 is the winner of this tradeoff with 0,38 % error.
 
 IPC-2141 formulas have severe issues and must be used with extreme caution.      
 
