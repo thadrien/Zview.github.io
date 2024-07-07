@@ -2,7 +2,7 @@
 ---
 /*******************************************************/
 /* f4inx.css                                           */
-/* Hadrien Theveneau, 2022                             */
+/* Hadrien Theveneau, 2024                             */
 /* Parts based on Hyde (https://github.com/poole/hyde) */
 /* and Poole (https://github.com/poole/poole).         */
 /*******************************************************/
@@ -640,4 +640,5 @@ figure img {
 }
 figure figcaption {
   font-style: italic;
+  text-align: center;
 }
