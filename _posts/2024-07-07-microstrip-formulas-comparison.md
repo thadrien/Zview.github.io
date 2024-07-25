@@ -1,10 +1,9 @@
 ---
 layout: post
 title: Microstrip formulas comparison.
-last_modified_at: 2024-07-07 20:00
+permalink: /posts/microstrip-formulas-comparison.html
+last_modified_at: 2024-07-07 19:55:48
 ---
-
-<!-- permalink: /posts/microstrip-formulas-comparison.html -->
 
 ## Introduction
 
