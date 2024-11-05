@@ -2,8 +2,16 @@
 layout: post
 title: IQ modulator and quadrature coupler sign issues.
 permalink: /posts/IQ-quadrature-sign.html
-last_modified_at: 2024-06-01 17:08
+last_modified_at: 2024-11-05
 ---
+
+<p class="begin-note"><b>Update from 2024-11-05:</b> Steve from Microwaves 101 also tackled this topic (<a href="https://www.microwaves101.com/encyclopedias/branchline-coupler-port-definition">https://www.microwaves101.com/encyclopedias/branchline-coupler-port-definition</a>), proposing a different port-naming convention for the branchline coupler. Steve names the direct and coupled outputs in reverse compared to the approach I use. His convention offers some interesting arguments: the output he names "forward" exhibits a higher bandwidth and flatter phase response.</p>
+
+<p class="begin-note">Upon further analysis, it appears that the operating principles of branchline couplers differ significantly from those of coupled line couplers. Consequently, the terms "direct" and "coupled," commonly used for coupled line couplers, no longer carry the same meaning.</p>
+
+<p class="begin-note">For now, I’ll retain the "geometric" convention I initially used, as it seems more common, although I’m not entirely convinced it’s more "correct." Examples that follow this convention can be found in <a href="https://www.researchgate.net/figure/Conventional-branch-line-coupler_fig1_264335850">this research</a>, <a href="https://www.researchgate.net/figure/The-3dB-branch-line-directional-coupler-structure_fig8_221787600">this diagram</a>, <a href="http://jre.cplire.ru/alt/nov12/12/text.html">this article</a>, and <a href="https://www.semanticscholar.org/paper/Miniaturised-broadband-branch-line-coupler-for-and-Thiyagarajan-Kesavamurthy/0a68c3794644204e7e99a7d4f45eb6ef589456c7">this paper</a>).</p>
+
+<p class="begin-note">Many thanks to Steve for raising this interesting topic. Thanks also ChatGPT for improving my English.</p>
 
 ## Introduction
 
